@@ -7,3 +7,4 @@ L.tileLayer('https://wms.ign.gob.ar/geoserver/gwc/service/tms/1.0.0/capabasearge
 }).addTo(mimapa);
 
 //hola tios como estan
+//buenas tardes
