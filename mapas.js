@@ -8,3 +8,19 @@ L.tileLayer('https://wms.ign.gob.ar/geoserver/gwc/service/tms/1.0.0/capabasearge
 
 //hola tios como estan
 //buenas tardes
+
+$(document).ready(function name(params) {
+    console.log("cargado");
+    
+    let botonenviar= $("#enviar");
+    let despues="hola"
+    
+ 
+    botonenviar.click(function name(params) {
+        var inputElement = document.getElementById("direccion");
+        var valor = inputElement.value;
+        console.log(valor); 
+        despues=valor 
+    })
+    console.log(despues)
+ });
