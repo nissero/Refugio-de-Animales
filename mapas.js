@@ -21,6 +21,15 @@ $(document).ready(function name(params) {
         var valor = inputElement.value;
         console.log(valor); 
         despues=valor 
+        
     })
     console.log(despues)
  });
+
+try{
+    var n = usig.NormalizadorDirecciones.init();
+    var opts = n.normalizar("julio", 10);
+}
+catch(error){
+    console.log(error.to);
+}
