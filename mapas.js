@@ -1,35 +1,82 @@
-var mimapa = L.map('mapa').setView([-34.52302221777237, -58.70044541652767], 20);
 
-L.tileLayer('https://wms.ign.gob.ar/geoserver/gwc/service/tms/1.0.0/capabaseargenmap@EPSG%3A3857@png/{z}/{x}/{-y}.png', {
-    attribution: '<a href="http://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> | <a href="http://www.ign.gob.ar/AreaServicios/Argenmap/IntroduccionV2" target="_blank">Instituto Geográfico Nacional</a> + <a href="http://www.osm.org/copyright" target="_blank">OpenStreetMap</a>',
-    minZoom: 1,
-    maxZoom: 16
-}).addTo(mimapa);
 
 //hola tios como estan
 //buenas tardes
+function main() {
+  let inpu = document.getElementById("b");
+  inpu.addEventListener("keyup", (event)=>{
+    var di= "http://servicios.usig.buenosaires.gob.ar/normalizar/?direccion=" + document.getElementById("b").value;
+    getFromURL(di,listarUsuarios);
+  });
+  
+  //https://jsonplaceholder.typicode.com/users
 
-$(document).ready(function name(params) {
-    console.log("cargado");
-    
-    let botonenviar= $("#enviar");
-    let despues="hola"
-    
- 
-    botonenviar.click(function name(params) {
-        var inputElement = document.getElementById("direccion");
-        var valor = inputElement.value;
-        console.log(valor); 
-        despues=valor 
-        
-    })
-    console.log(despues)
- });
+  //getUsuariosSincrono();
+  //getUsuariosASincrono();
+  //var di= "http://servicios.usig.buenosaires.gob.ar/normalizar/?direccion=" + document.getElementById("b").value;
+  //getFromURL(di,listarUsuarios);
 
-try{
-    var n = usig.NormalizadorDirecciones.init();
-    var opts = n.normalizar("julio", 10);
 }
-catch(error){
-    console.log(error.to);
+function getUsuariosASincrono(){
+
+  let xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange=function() {
+    if(xhttp.readyState == 4 && xhttp.status==200 ){
+      let response = JSON.parse(xhttp.responseText);
+      console.log(response);
+    }
+  }
+  xhttp.open("GET", "http://servicios.usig.buenosaires.gob.ar/normalizar/?direccion=julio", true)
+  xhttp.send();
+
+}
+
+function getFromURL(url, callback) {
+
+  let xhttp = new XMLHttpRequest();
+
+
+  xhttp.onreadystatechange = function() {
+
+      if ( xhttp.readyState == 4 && xhttp.status == 200) {
+          let response = JSON.parse(xhttp.responseText);
+          callback(response);
+      }
+  }
+
+ /*xhttp.addEventListener("load", response => {
+
+  let result = JSON.parse(response.currentTarget.responseText);
+  console.log(result);*/
+
+ 
+
+  xhttp.open("GET", url,true);
+  xhttp.send();
+
+}
+
+function getUsuariosSincrono(){
+  let xhttp = new XMLHttpRequest();
+
+  xhttp.open("GET", "http://servicios.usig.buenosaires.gob.ar/normalizar/?direccion=julio", false);
+  xhttp.send();
+
+  if (xhttp.status == 200) {
+      let response = JSON.parse(xhttp.responseText);
+      
+      listarUsuarios(response);
+  }
+}
+
+function listarUsuarios(response) {
+  let lista = document.getElementById("lista-usuarios");
+  response.direccionesNormalizadas.forEach(usuario => {
+      let item = document.createElement("li");
+
+      item.append(usuario.direccion);
+
+      lista.append(item);
+      
+  });
 }
