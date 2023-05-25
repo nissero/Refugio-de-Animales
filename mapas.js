@@ -67,7 +67,7 @@ function listarUsuarios(response) {
     });
   
   if (direcciones.length == 1){
-    console.log(direcciones[0].coordenadas.x);
+    var direccionParticular = direcciones[0];
   }
 }
 
