@@ -79,14 +79,17 @@ function listarUsuarios(response) {
     });
   
   if (direcciones.length == 1){
-    marcarEnMapa(direcciones[0]);
+    if (direcciones[0].altura !=null ) {
+      marcarEnMapa(direcciones[0]);
+    }
+    
   }
 
 }
 
 function marcarEnMapa(direccion){
-  map.setView([direccion.coordenadas.y, direccion.coordenadas.x], 13);
- /* L.marker([direccion.coordenadas.x, direccion.coordenadas.y]).addTo(map).bindPopup(direccion.nombre_calle + ', ' + direccion.nombre_partido + ', ' + direccion.nombre_localidad).openPopup(); */
+  map.setView([direccion.coordenadas.y, direccion.coordenadas.x], 20);
+  L.marker([direccion.coordenadas.y, direccion.coordenadas.x]).addTo(map).bindPopup(direccion.nombre_calle + ', ' + direccion.nombre_partido + ', ' + direccion.nombre_localidad).openPopup(); 
 }
 
 function crearMapa() {
