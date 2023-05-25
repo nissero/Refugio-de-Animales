@@ -1,11 +1,17 @@
 
-
+ var coordenadaX;
+ var coordenadaY;
 //hola tios como estan
 //buenas tardes
 function main() {
   crearMapa();
 
   let inpu = document.getElementById("b");
+
+  if (coordenadaX!=null && coordenadaY!=null) {
+      presionoEnter(coordenadaX,coordenadaY);
+  }
+ 
 
   inpu.addEventListener("keyup", (event) => {
     var di = "http://servicios.usig.buenosaires.gob.ar/normalizar/?direccion=" + document.getElementById("b").value;
@@ -15,6 +21,14 @@ function main() {
 
 }
 
+
+function presionoEnter(a,b) {
+  $("#b").keypress(function (e) {
+    if (e.which == 13) {
+      
+    }
+  });
+}
 
 function actualizarDirecciones() { //actualiza dirreciones mientras escribe
   var lista = document.getElementById("lista-usuarios");
@@ -69,6 +83,9 @@ function listarUsuarios(response) {
   
   if (direcciones.length == 1){
     console.log(direcciones[0].coordenadas.x);
+    coordenadaX=direcciones[0].coordenadas.x;
+    coordenadaY=direcciones[0].coordenadas.y;
+   
 
   }
 
