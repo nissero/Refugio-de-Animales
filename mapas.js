@@ -6,6 +6,10 @@ function main() {
   crearMapa();
 
   let inpu = document.getElementById("b");
+
+  
+ 
+
   inpu.addEventListener("keyup", (event) => {
     var di = "http://servicios.usig.buenosaires.gob.ar/normalizar/?direccion=" + document.getElementById("b").value;
     getFromURL(di, listarUsuarios);
