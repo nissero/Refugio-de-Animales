@@ -1,6 +1,7 @@
 
  var coordenadaX;
  var coordenadaY;
+ var map;
 //hola tios como estan
 //buenas tardes
 function main() {
@@ -93,7 +94,7 @@ function marcarEnMapa(direccion){
 }
 
 function crearMapa() {
-  var map = L.map('map').setView([-34.52299128711134, -58.700488331227234], 13);
+   map = L.map('map').setView([-34.52299128711134, -58.700488331227234], 13);
       L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
         maxZoom: 19,
         attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
