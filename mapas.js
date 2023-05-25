@@ -1,8 +1,7 @@
 
- var coordenadaX;
- var coordenadaY;
+
  var map;
- var map;
+
 //hola tios como estan
 //buenas tardes
 function main() {
@@ -10,9 +9,7 @@ function main() {
 
   let inpu = document.getElementById("b");
 
-  if (coordenadaX!=null && coordenadaY!=null) {
-      presionoEnter(coordenadaX,coordenadaY);
-  }
+  
  
 
   inpu.addEventListener("keyup", (event) => {
