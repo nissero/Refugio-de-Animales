@@ -65,5 +65,9 @@ function listarUsuarios(response) {
     lista.append(item);
 
     });
+  
+  if (direcciones.length == 1){
+    console.log(direcciones[0].coordenadas.x);
+  }
 }
 
