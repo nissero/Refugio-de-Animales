@@ -22,9 +22,7 @@ function actualizarDirecciones() { //actualiza dirreciones mientras escribe
     
     // Recorre los elementos en sentido inverso para evitar problemas con los índices
     for (var i = elementos.length - 1; i >= 0; i--) {
-      if ((i + 1) % 2 === 0) { // Verifica si el índice es par
         lista.removeChild(elementos[i]);
-      }
     }
     
 }
@@ -62,7 +60,6 @@ function listarUsuarios(response) {
       let item = document.createElement("li");
 
       item.append(usuario.direccion);
-
       lista.append(item);
       
   });
