@@ -1,7 +1,7 @@
 
 
  var map;
-
+ var map;
 //hola tios como estan
 //buenas tardes
 function main() {
