@@ -79,7 +79,10 @@ function listarUsuarios(response) {
     });
   
   if (direcciones.length == 1){
-    marcarEnMapa(direcciones[0]);
+    if (direcciones[0].altura !=null ) {
+      marcarEnMapa(direcciones[0]);
+    }
+    
   }
 
 }
