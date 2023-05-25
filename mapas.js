@@ -68,10 +68,14 @@ function listarUsuarios(response) {
     });
   
   if (direcciones.length == 1){
-    console.log(direcciones[0].coordenadas.x);
-
+    marcarEnMapa(direcciones[0]);
   }
 
+}
+
+function marcarEnMapa(direccion){
+  map('map').setView([direccion.coordenadas.x, direccion.coordenadas.y], 13);
+  L.marker([direccion.coordenadas.x, direccion.coordenadas.y]).addTo(map).bindPopup(direccion.nombre_calle + ', ' + direccion.nombre_partido + ', ' + direccion.nombre_localidad).openPopup();
 }
 
 function crearMapa() {
