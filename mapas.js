@@ -3,7 +3,7 @@
 //hola tios como estan
 //buenas tardes
 function main() {
-
+  crearMapa();
 
   let inpu = document.getElementById("b");
 
@@ -37,6 +37,7 @@ function getFromURL(url, callback) {
 
     if (xhttp.readyState == 4 && xhttp.status == 200) {
       let response = JSON.parse(xhttp.responseText);
+      console.log(response);
       callback(response);
     }
   }
@@ -67,7 +68,18 @@ function listarUsuarios(response) {
     });
   
   if (direcciones.length == 1){
-    var direccionParticular = direcciones[0];
+    console.log(direcciones[0].coordenadas.x);
+
   }
+
+}
+
+function crearMapa() {
+  var map = L.map('map').setView([-34.52299128711134, -58.700488331227234], 13);
+      L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+      }).addTo(map);
+      L.marker([-34.52299128711134, -58.700488331227234]).addTo(map).bindPopup('Universidad Nacional de General Sarmiento').openPopup();
 }
 
