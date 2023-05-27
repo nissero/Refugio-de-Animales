@@ -49,6 +49,10 @@ footer{
   grid-area: "footer";
 }
 
+.navbar-nav{
+  color: black;
+}
+
 #avisos{
 
   display: flex;
