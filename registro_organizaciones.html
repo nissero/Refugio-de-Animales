@@ -20,20 +20,75 @@
   <div id="page">
     <div id="header">
       <div id="logo">
-        <h1>Normalizador de Direcciones</h1>
+        <h1>Solicitud Registro de Organizaciones</h1>
       </div>
     </div>
     <div id="buscador" class="buscador">
       <form id="mainForm" accept-charset="utf-8">
-        <label for="b">Dirección</label>
+        <label>Nombre: </label><input type="text" id="nombre-organizacion">
+        <br>
+        <br>
+
+        <label>Descripción</label>
+
+        <br>
+
+        <textarea id="descripcion" name="descripcion" rows="10" cols="40" maxlength="300"></textarea>
+
+        <br>
+        <br>
+
+        <label for="b">Dirección: </label>
         <input type="text" size="40" name="b" id="b" title="Dirección a buscar" class="text" />
+        <br>
         <span id="ejemplo">ej.: Callao y Corrientes, Florida 550, etc.</span>
+
+        <br>
+
+        <ul id="lista-usuarios"></ul>
+
+        <br>
+
+        <div id="map"></div>
+
+        <br>
+        <br>
+
+        <label>Horarios: </label>
+        <input id="horarios" type="text">
+
+        <br>
+        <br>
+
+        <label>Teléfono: </label>
+        <input id="telefono" type="text">
+
+        <br>
+        <br>
+                    
+        <label>Mail: </label>
+        <input id="mail" type="email">
+
+        <br>
+        <br>
+
+        <label>Foto: </label>
+        <input id="foto" type="file">
+
+        <br>
+        <br>
+        <br>
+
+        <button type="submit">Enviar</button>
+
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <label>Se enviará la solicitud de registro al coodinador del sitio, la resolución de la solicitud se le informará via mail.</label>
       </form>
     </div>
-  </div>
-  <ul id="lista-usuarios"></ul>
-  <div id="map">
-    
   </div>
 
   <br>
