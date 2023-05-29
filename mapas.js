@@ -7,9 +7,6 @@ function main() {
 
   let inpu = document.getElementById("b");
 
-  
- 
-
   inpu.addEventListener("keyup", (event) => {
     var di = "http://servicios.usig.buenosaires.gob.ar/normalizar/?direccion=" + document.getElementById("b").value;
     getFromURL(di, listarUsuarios);
@@ -27,9 +24,9 @@ function presionoEnter(a,b) {
   });
 }
 
-function actualizarDirecciones() { //actualiza dirreciones mientras escribe
+function actualizarDirecciones() { //actualiza direcciones mientras escribe
   var lista = document.getElementById("lista-usuarios");
-  var elementos = lista.getElementsByTagName("li");
+  var elementos = lista.getElementsByTagName("ul");
 
   // Recorre los elementos en sentido inverso para evitar problemas con los índices
   for (var i = elementos.length - 1; i >= 0; i--) {
@@ -71,10 +68,13 @@ function listarUsuarios(response) {
   var direcciones = response.direccionesNormalizadas;
   console.log(direcciones.length);
   direcciones.forEach(usuario => {
-    let item = document.createElement("li");
+    let item = document.createElement("ul");
 
     item.append(usuario.direccion);
-    lista.append(item);
+
+    if(!lista.contains(item)){
+      lista.append(item)
+    }
 
     });
   
