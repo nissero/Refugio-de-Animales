@@ -1,0 +1,64 @@
+body{
+  background-image: url("../Images/fondo.jpg");
+
+
+height: 100vh;
+display: grid;
+grid-template-columns: 2;
+grid-template-rows: 15% 10% 65% 10%;
+grid-template-areas:
+
+"titulo titulo",
+"menu menu" ,
+"contenido contenido",
+"footer footer"
+;
+
+
+
+
+
+}
+
+#form{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+
+}
+
+.contenido{
+  grid-area: "contenido";
+  display: flex;
+  justify-content: space-evenly;
+  background-color: white;
+  flex-wrap: wrap;
+}
+
+header{
+  grid-area: "titulo";
+}
+
+head{
+  grid-area: "menu";
+  margin: 20%;
+}
+
+
+footer{
+  grid-area: "footer";
+}
+
+.navbar-nav{
+  color: black;
+}
+
+#avisos{
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+}
+
+
