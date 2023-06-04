@@ -20,16 +20,16 @@ class Aviso {
 }
 
 class AvisoAdopcion extends Aviso {
-    constructor(perfilAnimal, telefono, cuidados, tipoAviso) {
-        super(perfilAnimal, telefono, tipoAviso, img)
+    constructor(perfilAnimal, telefono, tipoAviso, img , cuidados) {
+        super(perfilAnimal, telefono, tipoAviso, img )
         this.cuidados = cuidados;
 
     }
 }
 
 class avisoPerroPerdido extends Aviso {
-    constructor(perfilAnimal, telefono, tipoAviso, direccion, fecha) {
-        super(perfilAnimal, telefono, tipoAviso, img)
+    constructor(perfilAnimal, telefono, tipoAviso, img, direccion, fecha) {
+        super(perfilAnimal, telefono, tipoAviso, img )
         this.direccion = direccion;
         this.fecha = fecha;
     }
@@ -41,15 +41,17 @@ const contenerDeProcutos = document.getElementById('cuerpoHTML');
 contenerDeProcutos.classList.add("segurosMostrados")
 const adopcion = "adopcion";
 const perdido = "perdido";
-let listaSeguros = []
+let listaaviso = []
 
 
 
 fetch("../Js/avisos.json")
 .then(response => response.json())
 .then(data => {
-    listaSeguros = data;
-    listaSeguros.forEach((aviso) => {
+    listaaviso = data;
+    listaaviso.forEach((aviso) => {
+
+
         const div = document.createElement(`div`)
         const image = document.createElement("img")
         image.src = aviso.img
@@ -75,13 +77,8 @@ fetch("../Js/avisos.json")
       </div>`
 
 
-
-
-
-
         contenerDeProcutos.append(div)
         
-
         //       if(seguro.tipoAviso == adopcion){
         //     }
     })
