@@ -111,6 +111,7 @@ const mostrarSeguros = async () => {
                     <hr>`
                 contenerDeProcutos.append(div)
 
+
                 //       if(seguro.tipoAviso == adopcion){
 
                 //     }
