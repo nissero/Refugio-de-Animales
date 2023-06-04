@@ -10,6 +10,9 @@ class organizacion{
     }
 }
 
+
+
+const contenerDeProcutos = document.getElementById('cuerpoOrg');
 let listaOrg = []
 
 fetch("../Js/organizaciones.json")
@@ -21,7 +24,7 @@ fetch("../Js/organizaciones.json")
 
         const div = document.createElement(`div`)
         const image = document.createElement("img")
-        image.src = aviso.img
+        image.src = org.img
         //const image = document.createElement("img")
         //  image.src = seguro.img
         //image.classList.add("imagenSeguro")
