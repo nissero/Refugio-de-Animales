@@ -70,11 +70,11 @@ function exportarJson() {
 exportarJson().then(nuevoArrayAvisos => {
     avisos = nuevoArrayAvisos;
     console.log(avisos);
-    prueba();
+    añadirAvisoAlDoc();
 });
 
 
-function prueba(){
+function añadirAvisoAlDoc(){
     avisos.forEach((aviso) => {
                 const div = document.createElement(`div`)
                 console.log(1);
@@ -127,48 +127,7 @@ function prueba(){
     })
 }
 
-function añadirAvisoAlDoc() {
-    let listaaviso = [];
-    fetch("../Js/avisos.json")
-        .then(response => response.json())
-        .then(data => {
-            listaaviso = data;
-            listaaviso.forEach((aviso) => {
 
-
-                const div = document.createElement(`div`)
-                const image = document.createElement("img")
-                image.src = aviso.img
-                //const image = document.createElement("img")
-                //  image.src = seguro.img
-                //image.classList.add("imagenSeguro")
-                div.innerHTML = 
-                                `<div class="card mb-3" style="max-width: 540px;">
-                                    <div class="row g-0">
-                                        <div class="col-md-4">
-                                            <img src="${aviso.img}" class="img-fluid rounded-start" alt="..."> 
-                                        </div>
-                                    <div class="col-md-8">
-                                        <div class="card-body">
-                                            <h5 class="card-title"> ${aviso.titulo}</h5>
-                                            <p class="card-text">Tipo de aviso: ${aviso.tipoAviso}</p>
-                                            <p class="card-text">Perfil del animal: ${aviso.perfilAnimal}</p>
-                                            <p class="card-text"><small class="text-muted">  Cuidados: ${aviso.cuidados}  </small></p>
-                                            <p class="card-text"><small class="text-muted">  Contacto: ${aviso.telefono}  </small></p>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>`
-
-
-                contenerDeProcutos.append(div)
-
-                //       if(seguro.tipoAviso == adopcion){
-                //     }
-            })
-        })
-}
 
 
 
