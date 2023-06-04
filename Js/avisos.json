@@ -1,0 +1,15 @@
+[
+
+    {   
+        "perfilAnimal": "Naza tiene 24 y es poringuero",
+        "telefono": "123456789",
+        "cuidados": "se baña"
+    },
+
+    {
+        "perfilAnimal": "Lean tiene 24 y no se conecta",
+        "telefono": "123456789",
+        "cuidados": "no se conecta"
+    }
+
+]
