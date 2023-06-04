@@ -91,39 +91,3 @@ fetch("../Js/avisos.json")
 
 
 
-const mostrarSeguros = async () => {
-    console.log("jasoooooooooooooon");
-
-    fetch("../Js/avisos.json")
-        .then(response => response.json())
-        .then(data => {
-            listaSeguros = data;
-            listaSeguros.forEach((seguro) => {
-                const div = document.createElement(`div`)
-                //const image = document.createElement("img")
-                //  image.src = seguro.img
-                //image.classList.add("imagenSeguro")
-
-
-
-
-                div.innerHTML = ` <h4 class="">  el TELEFONO $ ${seguro.telefono}</h4>
-                    <hr>`
-                contenerDeProcutos.append(div)
-
-
-                //       if(seguro.tipoAviso == adopcion){
-
-                //     }
-
-
-
-
-
-
-            })
-        })
-}
-
-
-
