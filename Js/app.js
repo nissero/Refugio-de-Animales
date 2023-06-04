@@ -20,8 +20,8 @@ class Aviso {
 }
 
 class AvisoAdopcion extends Aviso {
-    constructor(perfilAnimal, telefono, tipoAviso, img , cuidados) {
-        super(perfilAnimal, telefono, tipoAviso, img )
+    constructor(perfilAnimal, telefono, tipoAviso, img, cuidados) {
+        super(perfilAnimal, telefono, tipoAviso, img)
         this.cuidados = cuidados;
 
     }
@@ -29,7 +29,7 @@ class AvisoAdopcion extends Aviso {
 
 class avisoPerroPerdido extends Aviso {
     constructor(perfilAnimal, telefono, tipoAviso, img, direccion, fecha) {
-        super(perfilAnimal, telefono, tipoAviso, img )
+        super(perfilAnimal, telefono, tipoAviso, img)
         this.direccion = direccion;
         this.fecha = fecha;
     }
@@ -43,46 +43,51 @@ const adopcion = "adopcion";
 const perdido = "perdido";
 let listaaviso = []
 
+function main(){
+    extraerJson();
+}
+
+function extraerJson() {
+    fetch("../Js/avisos.json")
+        .then(response => response.json())
+        .then(data => {
+            listaaviso = data;
+            listaaviso.forEach((aviso) => {
 
 
-fetch("../Js/avisos.json")
-.then(response => response.json())
-.then(data => {
-    listaaviso = data;
-    listaaviso.forEach((aviso) => {
+                const div = document.createElement(`div`)
+                const image = document.createElement("img")
+                image.src = aviso.img
+                //const image = document.createElement("img")
+                //  image.src = seguro.img
+                //image.classList.add("imagenSeguro")
+                div.innerHTML = 
+                                `<div class="card mb-3" style="max-width: 540px;">
+                                    <div class="row g-0">
+                                        <div class="col-md-4">
+                                            <img src="${aviso.img}" class="img-fluid rounded-start" alt="..."> 
+                                        </div>
+                                    <div class="col-md-8">
+                                        <div class="card-body">
+                                            <h5 class="card-title">  Tipo de Aviso:  ${aviso.tipoAviso}</h5>
+                                            <p class="card-text">Perfil del animal: ${aviso.perfilAnimal}</p>
+                                            <p class="card-text"><small class="text-muted">  Cuidados: ${aviso.cuidados}  </small></p>
+                                            <p class="card-text"><small class="text-muted">  Contacto: ${aviso.telefono}  </small></p>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>`
 
 
-        const div = document.createElement(`div`)
-        const image = document.createElement("img")
-        image.src = aviso.img
-        //const image = document.createElement("img")
-        //  image.src = seguro.img
-        //image.classList.add("imagenSeguro")
-        div.innerHTML = `<div class="card mb-3" style="max-width: 540px;">
+                contenerDeProcutos.append(div)
 
-        <div class="row g-0">
-          <div class="col-md-4">
-          <img src="${aviso.img}" class="img-fluid rounded-start" alt="..."> 
-          </div>
-          <div class="col-md-8">
-            <div class="card-body">
-              <h5 class="card-title">  Tipo de Aviso:  ${aviso.tipoAviso}</h5>
-              <p class="card-text">Perfil del animal: ${aviso.perfilAnimal}</p>
-              <p class="card-text"><small class="text-muted">  Cuidados: ${aviso.cuidados}  </small></p>
-              <p class="card-text"><small class="text-muted">  Contacto: ${aviso.telefono}  </small></p>
+                //       if(seguro.tipoAviso == adopcion){
+                //     }
+            })
+        })
+}
 
-            </div>
-          </div>
-        </div>
-      </div>`
-
-
-        contenerDeProcutos.append(div)
-        
-        //       if(seguro.tipoAviso == adopcion){
-        //     }
-    })
-})
 
 
 
