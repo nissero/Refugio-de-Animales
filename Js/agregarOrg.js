@@ -1,5 +1,5 @@
 //crear el JSON vacio
-let organizacionesNuevas = {}
+let organizacionesNuevas = {};
 
 // evento que escuche el "summit" del formulario para registrar ORG
 var formulario = document.getElementById("agregar-organizacion");
@@ -24,6 +24,29 @@ formulario.addEventListener('click', function(event){
  const organizacionJSON = JSON.stringify(nuevaOrg);
 
   console.log(organizacionJSON);
+
+  if(nombreORg == "" || descripcionOrg == "" || actividadesOrg ==""
+  || descripcionOrg == "" || horariosOrg == "" || telefonoOrg == ""
+  || imgOrg == "" ){
+               Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: `El formulario esta incompleto`
+              })
+  }else{
+    Swal.fire(`PERFECTO! Solicitud de registro agregada correctamente,
+    Sus datos: 
+    nombre: ${nombreORg}
+    descripcion: ${descripcionOrg}
+    Actividades: ${actividadesOrg}
+    Direccion: ${direccionOrg}
+    horarios: ${horariosOrg}
+    telefono: ${telefonoOrg}
+    Img: link de IMG guardado.
+    `);
+  
+
+  }
 
 
 })
