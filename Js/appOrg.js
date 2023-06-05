@@ -12,6 +12,13 @@ class organizacion{
 
 
 
+function mostrarOrganizacionRegistrada(){
+
+}
+ 
+
+
+
 const contenerDeProcutos = document.getElementById('cuerpoOrg');
 let listaOrg = []
 
@@ -52,6 +59,4 @@ fetch("../Js/organizaciones.json")
         //     }
     })
 })
-
-
 
