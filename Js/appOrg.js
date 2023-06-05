@@ -12,7 +12,15 @@ class organizacion{
 
 
 
+
 function mostrarOrganizacionRegistrada(){
+
+  var actualizarOrganizaciones = document.getElementById("actualizar-organizacion");
+  actualizarOrganizaciones.addEventListener('click', function(e){
+
+    console.log(organizacionJSON);
+    
+  })
 
 }
  
