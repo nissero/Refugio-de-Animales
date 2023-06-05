@@ -5,59 +5,63 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../css/style.css">
-  
+
+
   <!--   -->
 
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="../css/style.css">
   <title>Refugio de animales</title>
 </head>
 
 <body>
 
-  
-
-  <header>
-    <h1 class="text-center">Refugios de animales</h1>
-    <h3 class=""> Avisos de animales perdidos</h3>
-
-  </header>
+  <div id="web-avisos" class="container-fluid">
 
 
 
-  <head>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">Refugio de animales</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="./avisos.html">Avisos</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="./Busqueda_organizacion.html">Busqueda de organizacion</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="./registro_organizaciones.html">Registro organizaciones</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="../registro_organizaciones.html">pruebas con el normalizados</a>
-            </li>
-          </ul>
+    <header>
+      <h1 class="text-center">Refugios de animales</h1>
+      <h3 class=""> Avisos de animales perdidos</h3>
+
+    </header>
+
+
+
+    <div id="menu">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Refugio de animales</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="./avisos.html">Avisos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./Busqueda_organizacion.html">Busqueda de organizacion</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./registro_organizaciones.html">Registro organizaciones</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../registro_organizaciones.html">pruebas con el normalizados</a>
+              </li>
+            </ul>
+          </div>
         </div>
-      </div>
-    </nav>
-  </head>
+      </nav>
+    </div>
 
 
 
- <!--  <div class="contenido">
+    <!--  <div class="contenido">
     <section id="avisos">
 
       <div class="card mb-3" style="max-width: 540px;">
@@ -80,38 +84,38 @@
   </div>
 
 -->
-<div id="filtro" class="container text-white">
-  <div class="">
-    <div class="col-md-8">
-      <!-- Main content here -->
-    </div>
-    <div class="col-md-4">
-      <div class="checkbox-container">
-        <h4>Filtros de busqueda</h4>
-        <label for="adopcion">Avisos de adopcion</label>
-        <input name = "adopcion" type="checkbox" id="adopcion" value="adopcion" checked>
+    <div id="filtro" class="container text-white" style="padding: 2%;">
+      <div class="">
+        <div class="col-md-8">
+          <!-- Main content here -->
+        </div>
+        <div class="col-md-4">
+          <div class="checkbox-container">
+            <h4>Filtros de busqueda</h4>
+            <label for="adopcion">Avisos de adopcion</label>
+            <input name="adopcion" type="checkbox" id="adopcion" value="adopcion" checked>
 
-        <label for="perdida/encontrado">Avisos de perdida/encontrado</label>
-        <input name = "perdida" type="checkbox" id="perdida/encontrado" value="perdida/encontrado" checked>
+            <label for="perdida/encontrado">Avisos de perdida/encontrado</label>
+            <input name="perdida" type="checkbox" id="perdida/encontrado" value="perdida/encontrado" checked>
 
+          </div>
+          <button id="actualizar">actualizar</button>
+        </div>
       </div>
-      <button id = "actualizar">actualizar</button>
     </div>
+
+
+
+    <div id="cuerpoHTML" class="container-fluid" style="padding: 1%;">
+    </div>
+
+
+
+    <footer class="footer" id="footer">
+      <a class="">Asociacion perruna salvaje - profe aprobame el tp</a>
+    </footer>
+
   </div>
-</div>
-
-
-  
-    <div id="cuerpoHTML">
-    </div>
-
-
-
-  <footer class="" id="footer">
-    <a class="">Asociacion perruna salvaje - profe aprobame el tp</a>
-  </footer>
-  
-
 
 </body>
 

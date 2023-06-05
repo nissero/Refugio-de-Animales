@@ -120,6 +120,7 @@ exportarJson().then(nuevoArrayAvisos => {
 });
 
 function mostrarAvisos() {
+    contenerDeProcutos.innerHTML ="";
     checkAdopcion();
     checkPerdido();
     console.log("entro")
