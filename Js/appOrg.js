@@ -25,9 +25,6 @@ fetch("../Js/organizaciones.json")
         const div = document.createElement(`div`)
         const image = document.createElement("img")
         image.src = org.img
-        //const image = document.createElement("img")
-        //  image.src = seguro.img
-        //image.classList.add("imagenSeguro")
         div.innerHTML = `<div class="card mb-3" style="max-width: 540px;">
 
         <div class="row g-0">

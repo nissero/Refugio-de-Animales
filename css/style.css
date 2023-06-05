@@ -15,10 +15,11 @@ grid-template-areas:
 "footer footer"
 ;
 
+}
 
 
-
-
+.filtro{
+  grid-area: "filtro";
 }
 
 
@@ -27,6 +28,7 @@ grid-template-areas:
   display: flex;
   flex-direction: row;
   justify-content: space-around;  
+  flex-wrap: wrap;
 
 }
 #form{
@@ -36,10 +38,10 @@ grid-template-areas:
 
 }
 
-.contenido{
+.cuerpoHTML{
   grid-area: "contenido";
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
   background-color: white;
   flex-wrap: wrap;
 }
