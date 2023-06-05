@@ -5,11 +5,12 @@ body{
 height: 100vh;
 display: grid;
 grid-template-columns: 2;
-grid-template-rows: 15% 10% 65% 10%;
+grid-template-rows: 15% 10% 15% 50% 10%;
 grid-template-areas:
 
 "titulo titulo",
 "menu menu" ,
+"filtro filtro",
 "contenido contenido",
 "footer footer"
 ;
