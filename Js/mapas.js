@@ -30,8 +30,8 @@ function exportarJson(){
         .then(data => {
             organizaciones = data;
             organizaciones.forEach((org)=> {
-                console.log(org);
-                ret.push(new L.marker([org.direccion.coordenadas.x, org.direccion.coordenadas.y])
+                console.log(org.direccion[0].coordenadas);
+                ret.push(new L.marker([org.direccion[0].coordenadas.x, org.direccion[0].coordenadas.y])
                 .addTo(map)
                 .bindPopup(org.nombre + ", " + org.direccion.nombre_calle + ', ' 
                 + org.direccion.nombre_partido + ', ' + org.direccion.nombre_localidad).openPopup());
