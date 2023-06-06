@@ -51,7 +51,7 @@ fetch("../Js/organizaciones.json")
               <h5 class="card-title">  Nombre ONG:  ${org.nombre}</h5>
               <p class="card-text">Descripcion : ${org.descripcion}</p>
               <p class="card-text">Actividades : ${org.actividades}</p>
-              <p class="card-text">Direccion : ${org.direccion}</p>
+              <p class="card-text">Direccion : ${org.direccion[0].direccion}</p>
               <p class="card-text">Horarios : ${org.horarios}</p>
               <p class="card-text">Telefono : ${org.telefono}</p>
 
