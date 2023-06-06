@@ -9,6 +9,155 @@ class organizacion{
         this.img = img
     }
 }
+var filtroVeterinariaIsChecked = false;
+var filtropeluqueriaIsChecked = false;
+var filtrorefugioIsChecked = false;
+
+function checkVet() {
+    var filtroVet = document.querySelector("input[name=Veterinaria]");
+    filtroVet.addEventListener('change', function () {
+        if (this.checked) {
+            console.log("check Veterinaria");
+            filtroVeterinariaIsChecked = true;
+            return filtroVeterinariaIsChecked;
+        }
+        else {
+          filtroVeterinariaIsChecked = false;
+            return filtroVeterinariaIsChecked;
+        }
+    });
+}
+
+
+function checkRefugio() {
+    var filtroRefugio = document.querySelector("input[name=refugio]");
+    filtroRefugio.addEventListener('change', function () {
+        if (this.checked) {
+            // filtroPerdidoIsChecked = true;
+            console.log("check refugio");
+            filtrorefugioIsChecked = true;
+            return filtrorefugioIsChecked;
+        }
+        else {
+          filtrorefugioIsChecked = false;
+            return filtrorefugioIsChecked;
+        }
+    });
+}
+
+
+function checkpeluqueria() {
+  var filtroPeluqueria = document.querySelector("input[name=peluqueria]");
+  filtroPeluqueria.addEventListener('change', function () {
+      if (this.checked) {
+          // filtroPerdidoIsChecked = true;
+          console.log("check peluqueria");
+          filtropeluqueriaIsChecked = true;
+          return filtropeluqueriaIsChecked;
+      }
+      else {
+        filtropeluqueriaIsChecked = false;
+          return filtropeluqueriaIsChecked;
+      }
+  });
+}
+
+//var filtroVeterinariaIsChecked = false;
+//var filtropeluqueriaIsChecked = false;
+//var filtrorefugioIsChecked = false;
+let organizacionFiltrados =[];
+let organizaciones = [];
+
+
+function filtrarOrganizaciones() {
+  checkVet();
+  checkRefugio();
+  checkpeluqueria();
+
+  
+  // falta completar con los objetos organizacion
+
+  console.log("entro")
+  // Ver todos
+  if (filtroVeterinariaIsChecked && filtropeluqueriaIsChecked 
+    && filtrorefugioIsChecked) {
+    organizacionFiltrados = organizaciones.filter(Organizacion => 
+      Organizacion.veterinaria && Organizacion.peluqueria && Organizacion.refugio);
+      
+     
+  }
+  //VER vete si y pelu si
+  else if (filtroVeterinariaIsChecked && filtropeluqueriaIsChecked 
+    && !filtrorefugioIsChecked) {
+      organizacionFiltrados = organizaciones.filter(Organizacion => 
+        Organizacion.veterinaria && Organizacion.peluqueria && !Organizacion.refugio);
+
+  }
+  // VER vet si, pelu no , vet si
+  else if (filtroVeterinariaIsChecked && !filtropeluqueriaIsChecked 
+    && filtrorefugioIsChecked){
+
+      organizacionFiltrados = organizaciones.filter(Organizacion => 
+        Organizacion.veterinaria && !Organizacion.peluqueria && Organizacion.refugio);
+
+  }
+// VER pelu si, pelu NO, refu NO
+  else if (filtroVeterinariaIsChecked && !filtropeluqueriaIsChecked 
+    && !filtrorefugioIsChecked) {
+      organizacionFiltrados = organizaciones.filter(Organizacion => 
+        Organizacion.veterinaria && !Organizacion.peluqueria && !Organizacion.refugio);
+
+  }
+  //VER Vete no, PELU SI, REFU SI
+  else if (!filtroVeterinariaIsChecked && filtropeluqueriaIsChecked 
+    && filtrorefugioIsChecked){
+
+      organizacionFiltrados = organizaciones.filter(Organizacion => 
+        !Organizacion.veterinaria && Organizacion.peluqueria && Organizacion.refugio);
+
+  }
+  // VER vete NO, pelu SI, refu NO
+    else if (!filtroVeterinariaIsChecked && filtropeluqueriaIsChecked 
+    && !filtrorefugioIsChecked){
+
+      organizacionFiltrados = organizaciones.filter(Organizacion => 
+        !Organizacion.veterinaria && Organizacion.peluqueria && !Organizacion.refugio);
+
+  }
+  //VETE NO, PELU NO, REFU SI
+  else if (!filtroVeterinariaIsChecked && !filtropeluqueriaIsChecked 
+    && filtrorefugioIsChecked){
+
+      organizacionFiltrados = organizaciones.filter(Organizacion => 
+        !Organizacion.veterinaria && !Organizacion.peluqueria && Organizacion.refugio);
+
+  }
+// NO VER NADA
+  else if (!filtroVeterinariaIsChecked && !filtropeluqueriaIsChecked 
+    && !filtrorefugioIsChecked){
+      organizacionFiltrados = organizaciones.filter(Organizacion => 
+        !Organizacion.veterinaria && !Organizacion.peluqueria && !Organizacion.refugio);
+
+  }
+
+  else{
+      console.log("no hizo nada")
+  }
+}
+
+
+
+
+const botonActualizar = document.getElementById("actualizar-organizacion");
+//botonActualizar.addEventListener("click", mostrarmostrarOrganizacionFiltradaAvisos);
+
+function mostrarOrganizacionFiltrada(){
+  contenerDeProcutos.innerHTML ="";
+  filtrarOrganizaciones()
+
+}
+
+
 
 
 
