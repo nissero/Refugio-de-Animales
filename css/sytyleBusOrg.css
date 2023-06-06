@@ -1,0 +1,63 @@
+body {
+    background-image: url("https://assets.change.org/photos/0/je/ws/DfjEWsdfwKdZxRg-800x450-noPad.jpg?1514563082");
+
+    height: 100vh;
+
+
+
+}
+
+
+.web{
+
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 15% 10% 15% 55% 5%;
+    grid-template-areas:
+
+        "titulo titulo",
+        "menu menu",
+        "filtro filtro",
+        "contenido contenido",
+        "footer footer"
+    ;
+
+
+}
+
+
+
+
+.cuerpoOrg {
+    display: flex;
+    grid-area: "contenido";
+    flex-direction: row;
+
+    justify-content: space-around;
+    flex-wrap: nowrap;
+}
+
+.filtro {
+    grid-area: "filtro";
+    padding-bottom: 10px;
+
+}
+
+
+header {
+    grid-area: "titulo";
+}
+
+.menu {
+    grid-area: "menu";
+    margin: 5%;
+}
+
+
+footer {
+    grid-area: "footer";
+}
+
+.navbar-nav {
+    color: black;
+}

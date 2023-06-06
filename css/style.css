@@ -1,0 +1,67 @@
+body {  
+  background-image: url("../Images/fondo.jpg");
+  height: 100vh;
+}
+
+
+.web-avisos{
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 15% 10% 15% 55% 5%;
+  grid-template-areas:
+
+      "titulo titulo",
+      "menu menu",
+      "filtro filtro",
+      "contenido contenido",
+      "footer footer"
+  ;
+
+}
+
+.filtro {
+  grid-area: "filtro";
+}
+
+
+
+.segurosMostrados {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+
+}
+
+#form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+
+}
+
+.cuerpoHTML {
+  grid-area: "contenido";
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  border: 2px;
+}
+
+header {
+  grid-area: "titulo";
+}
+
+menu {
+  grid-area: "menu";
+  margin: 20%;
+}
+
+
+footer {
+  grid-area: "footer";
+}
+
+.navbar-nav {
+  color: black;
+}

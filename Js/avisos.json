@@ -1,0 +1,35 @@
+[
+
+    {   
+        "titulo": "Se da en adopcion, mira demasiado poringa y no lo aguanto",
+        "perfilAnimal": "Naza tiene 24 y es poringuero",
+        "telefono": "123456789",
+        "cuidados": "se baña",
+        "tipoAviso": "Adopcion",
+        "img": "https://pbs.twimg.com/media/FKDgV56WQAEIOJN.jpg"
+
+    },
+
+    {
+        "titulo": "No se conecta en las llamadas, no sabemos donde anda!!!",
+        "perfilAnimal": "Lean tiene 24 y no se conecta",
+        "telefono": "123456789",
+        "cuidados": "no se conecta",
+        "tipoAviso": "perdidoEncontrado",
+        "fecha": "4/6/2023",
+        "img": "https://pbs.twimg.com/profile_images/1055482679808933889/Ksz-ichO_400x400.jpg"
+    },
+
+
+    {   
+        "titulo": "Se da en adopcion, te desaprueba la materia",
+        "perfilAnimal": "Tarda 15 horas en esplicar",
+        "telefono": "123456789",
+        "cuidados": "mira su hoja para corregir",
+        "tipoAviso": "Adopcion",
+        "img": "https://i1.rgstatic.net/ii/profile.image/967398110793737-1607657091980_Q512/Andres-Rojas-Paredes.jpg"
+
+    }
+
+
+]
