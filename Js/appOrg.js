@@ -1,17 +1,20 @@
 class organizacion{
-    constructor(nombre, descripcion,actividades,direccion,horarios,telefono,img){
+    constructor(nombre, descripcion,veterinaria,refugio,peluqueria,direccion,horarios,telefono,img){
         this.nombre = nombre
         this.descripcion = descripcion
-        this.actividades = actividades
         this.direccion = direccion
         this.horarios = horarios
         this.telefono = telefono
         this.img = img
+        this.veterinaria=veterinaria
+        this.refugio=refugio
+        this.peluqueria=peluqueria
     }
 }
-var filtroVeterinariaIsChecked = false;
-var filtropeluqueriaIsChecked = false;
-var filtrorefugioIsChecked = false;
+const contenerDeProcutos = document.getElementById('cuerpoOrg');
+var filtroVeterinariaIsChecked = true;
+var filtropeluqueriaIsChecked = true;
+var filtrorefugioIsChecked = true;
 
 function checkVet() {
     var filtroVet = document.querySelector("input[name=Veterinaria]");
@@ -69,6 +72,7 @@ let organizacionFiltrados =[];
 let organizaciones = [];
 
 
+
 function filtrarOrganizaciones() {
   checkVet();
   checkRefugio();
@@ -78,20 +82,26 @@ function filtrarOrganizaciones() {
   // falta completar con los objetos organizacion
 
   console.log("entro")
+  
+  
   // Ver todos
   if (filtroVeterinariaIsChecked && filtropeluqueriaIsChecked 
     && filtrorefugioIsChecked) {
     organizacionFiltrados = organizaciones.filter(Organizacion => 
-      Organizacion.veterinaria && Organizacion.peluqueria && Organizacion.refugio);
+      Organizacion.veterinaria || Organizacion.peluqueria || Organizacion.refugio)
       
+      console.log(organizacionFiltrados)
+      añadirOrganizacionesAldoc()
      
   }
   //VER vete si y pelu si
   else if (filtroVeterinariaIsChecked && filtropeluqueriaIsChecked 
     && !filtrorefugioIsChecked) {
       organizacionFiltrados = organizaciones.filter(Organizacion => 
-        Organizacion.veterinaria && Organizacion.peluqueria && !Organizacion.refugio);
-
+        (Organizacion.veterinaria || Organizacion.peluqueria) );
+        console.log(organizacionFiltrados)
+        añadirOrganizacionesAldoc()
+        console.log("vete y pelu si")
   }
   // VER vet si, pelu no , vet si
   else if (filtroVeterinariaIsChecked && !filtropeluqueriaIsChecked 
@@ -99,14 +109,16 @@ function filtrarOrganizaciones() {
 
       organizacionFiltrados = organizaciones.filter(Organizacion => 
         Organizacion.veterinaria && !Organizacion.peluqueria && Organizacion.refugio);
-
+        console.log(organizacionFiltrados)
+        añadirOrganizacionesAldoc()
   }
 // VER pelu si, pelu NO, refu NO
   else if (filtroVeterinariaIsChecked && !filtropeluqueriaIsChecked 
     && !filtrorefugioIsChecked) {
       organizacionFiltrados = organizaciones.filter(Organizacion => 
         Organizacion.veterinaria && !Organizacion.peluqueria && !Organizacion.refugio);
-
+        console.log(organizacionFiltrados)
+        añadirOrganizacionesAldoc()
   }
   //VER Vete no, PELU SI, REFU SI
   else if (!filtroVeterinariaIsChecked && filtropeluqueriaIsChecked 
@@ -114,7 +126,8 @@ function filtrarOrganizaciones() {
 
       organizacionFiltrados = organizaciones.filter(Organizacion => 
         !Organizacion.veterinaria && Organizacion.peluqueria && Organizacion.refugio);
-
+        console.log(organizacionFiltrados)
+        añadirOrganizacionesAldoc()
   }
   // VER vete NO, pelu SI, refu NO
     else if (!filtroVeterinariaIsChecked && filtropeluqueriaIsChecked 
@@ -122,7 +135,8 @@ function filtrarOrganizaciones() {
 
       organizacionFiltrados = organizaciones.filter(Organizacion => 
         !Organizacion.veterinaria && Organizacion.peluqueria && !Organizacion.refugio);
-
+        console.log(organizacionFiltrados)
+        añadirOrganizacionesAldoc()
   }
   //VETE NO, PELU NO, REFU SI
   else if (!filtroVeterinariaIsChecked && !filtropeluqueriaIsChecked 
@@ -130,14 +144,17 @@ function filtrarOrganizaciones() {
 
       organizacionFiltrados = organizaciones.filter(Organizacion => 
         !Organizacion.veterinaria && !Organizacion.peluqueria && Organizacion.refugio);
-
+        console.log(organizacionFiltrados)
+        añadirOrganizacionesAldoc()
   }
 // NO VER NADA
   else if (!filtroVeterinariaIsChecked && !filtropeluqueriaIsChecked 
     && !filtrorefugioIsChecked){
       organizacionFiltrados = organizaciones.filter(Organizacion => 
         !Organizacion.veterinaria && !Organizacion.peluqueria && !Organizacion.refugio);
-
+        
+        console.log(organizacionFiltrados)
+        añadirOrganizacionesAldoc()
   }
 
   else{
@@ -152,6 +169,10 @@ const botonActualizar = document.getElementById("actualizar-organizacion");
 //botonActualizar.addEventListener("click", mostrarmostrarOrganizacionFiltradaAvisos);
 
 function mostrarOrganizacionFiltrada(){
+  console.log("hola")
+  checkVet();
+  checkRefugio();
+  checkpeluqueria();
   contenerDeProcutos.innerHTML ="";
   filtrarOrganizaciones();
 
@@ -162,49 +183,42 @@ function mostrarOrganizacionFiltrada(){
 
 
 
-function mostrarOrganizacionRegistrada(){
+// function mostrarOrganizacionRegistrada(){
 
   var actualizarOrganizaciones = document.getElementById("actualizar-organizacion");
-  actualizarOrganizaciones.addEventListener('click', function(e){
+  botonActualizar.addEventListener('click',mostrarOrganizacionFiltrada)
+//   actualizarOrganizaciones.addEventListener('click', function(e){
 
-    console.log(organizacionJSON);
+//     console.log(organizacionJSON);
     
-  })
+//   })
 
-}
- 
+// }
 
+function añadirOrganizacionesAldoc(){
+  
 
-
-const contenerDeProcutos = document.getElementById('cuerpoOrg');
-let listaOrg = []
-
-fetch("../Js/organizaciones.json")
-.then(response => response.json())
-.then(data => {
-    listaOrg = data;
-    listaOrg.forEach((org) => {
-
-
-        const div = document.createElement(`div`)
+  organizacionFiltrados.forEach((organ)=>{
+    console.log(organizacionFiltrados)
+    const div = document.createElement(`div`)
         const image = document.createElement("img")
-        image.src = org.img
+        image.src = organ.img
         div.innerHTML = `<div class="card mb-3" style="max-width: 540px;">
 
         <div class="row g-0">
           <div class="col-md-4">
-          <img src="${org.img}" class="img-fluid rounded-start" alt="..."> 
+          <img src="${organ.img}" class="img-fluid rounded-start" alt="..."> 
           </div>
           <div class="col-md-8">
             <div class="card-body">
-              <h5 class="card-title">  Nombre ONG:  ${org.nombre}</h5>
-              <p class="card-text">Descripcion : ${org.descripcion}</p>
-              <p class="card-text">veterinaria : ${org.veterinaria}</p>
-              <p class="card-text">refugio : ${org.refugio}</p>
-              <p class="card-text">peluqueria : ${org.peluqueria}</p>
-              <p class="card-text">Direccion : ${org.direccion[0].direccion}</p>
-              <p class="card-text">Horarios : ${org.horarios}</p>
-              <p class="card-text">Telefono : ${org.telefono}</p>
+              <h5 class="card-title">  Nombre ONG:  ${organ.nombre}</h5>
+              <p class="card-text">Descripcion : ${organ.descripcion}</p>
+              <p class="card-text">veterinaria : ${organ.veterinaria}</p>
+              <p class="card-text">refugio : ${organ.refugio}</p>
+              <p class="card-text">peluqueria : ${organ.peluqueria}</p>
+              <p class="card-text">Direccion : ${organ.direccion[0].direccion}</p>
+              <p class="card-text">Horarios : ${organ.horarios}</p>
+              <p class="card-text">Telefono : ${organ.telefono}</p>
 
             </div>
           </div>
@@ -213,9 +227,42 @@ fetch("../Js/organizaciones.json")
 
 
         contenerDeProcutos.append(div)
-        
-        //       if(seguro.tipoAviso == adopcion){
-        //     }
-    })
-})
+  })
+}
+ 
 
+
+
+
+let listaOrg = []
+
+exportarJson().then(nuevoArrayOrgas => {
+  organizaciones = nuevoArrayOrgas;
+  console.log(organizaciones);
+  console.log(organizacionFiltrados);
+  
+  
+});
+
+
+function exportarJson() {
+  return new Promise((resolve, reject) => {
+      let ret = [];
+      let listaorg = [];
+      fetch("../Js/organizaciones.json")
+          .then(response => response.json())
+          .then(data => {
+              listaorg = data;
+              listaorg.forEach((orga) => {
+                  
+                      ret.push(new organizacion(orga.nombre, orga.descripcion, orga.veterinaria, orga.refugio, orga.peluqueria, orga.direccion,orga.horarios,orga.telefono,orga.img));   
+              });
+              resolve(ret); // Devolver el array cuando esté completo
+          })
+          .catch(error => {
+              reject(error); // Manejar el error en caso de que ocurra
+          });
+  });
+}
+
+ 
