@@ -30,13 +30,12 @@ function exportarJson(){
         .then(data => {
             organizaciones = data;
             organizaciones.forEach((org)=> {
-                var mensajePopup;
-                console.log(org.direccion[0].coordenadas);
+                var mensajePopup = "";
                 if (org.veterinaria){
                     mensajePopup = mensajePopup + " Es veterinaria<br>"
                 }
                 if (org.peluqueria){
-                    mensajePopop = mensajePopup + " Es peluqueria<br>"
+                    mensajePopup = mensajePopup + " Es peluqueria<br>"
                 }
                 if (org.refugio){
                     mensajePopup = mensajePopup + " Es un refugio <br>"
