@@ -153,7 +153,7 @@ const botonActualizar = document.getElementById("actualizar-organizacion");
 
 function mostrarOrganizacionFiltrada(){
   contenerDeProcutos.innerHTML ="";
-  filtrarOrganizaciones()
+  filtrarOrganizaciones();
 
 }
 
