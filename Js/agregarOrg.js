@@ -10,7 +10,7 @@ formulario.addEventListener('click', function(event){
   var nombreORg = document.getElementById("nombre-organizacion").value;
     var descripcionOrg = document.getElementById("descripcion-organizacion").value;
     var actividadesOrg = document.getElementById("actividades-organizacion").value;
-    var direccionOrg = document.getElementById("direccion-organizacion").value;
+    var direccionOrg = document.getElementById("b").value;
     var horariosOrg = document.getElementById("horarios-organizacion").value;
     var telefonoOrg = document.getElementById("telefono-organizacion").value;
     var imgOrg = document.getElementById("img-organizacion").value;

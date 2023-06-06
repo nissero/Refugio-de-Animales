@@ -1,10 +1,10 @@
 
- var map;
- var marker;
+
+
 //hola tios como estan
 //buenas tardes
 function main() {
-  crearMapa();
+  
 
   let inpu = document.getElementById("b"); //b es la direccion a buscar que viene del input
 
@@ -90,30 +90,9 @@ function listarUsuarios(response) {
     }
     });
   
-  if (direcciones.length == 1){
-    if (direcciones[0].altura !=null ) {
-      marcarEnMapa(direcciones[0]);
-    }
-    
-  }
+ 
   
 
 }
 
-function marcarEnMapa(direccion){
-  map.removeLayer(marker);
-  map.setView([direccion.coordenadas.y, direccion.coordenadas.x], 20);
-  marker = new L.marker([direccion.coordenadas.y, direccion.coordenadas.x]).addTo(map).bindPopup(direccion.nombre_calle + ', ' + direccion.nombre_partido + ', ' + direccion.nombre_localidad).openPopup(); 
-  map.addLayer(marker);
-}
-
-function crearMapa() {
-  map = L.map('map').setView([-34.52299128711134, -58.700488331227234], 13);
-      L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        maxZoom: 19,
-        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-      }).addTo(map);
-      marker = new L.marker([-34.52299128711134, -58.700488331227234]).addTo(map).bindPopup('Universidad Nacional de General Sarmiento').openPopup();
-      map.addLayer(marker);
-}
 
