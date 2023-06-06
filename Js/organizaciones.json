@@ -3,7 +3,9 @@
     {   
         "nombre": "Naza Sociedad anonima",
         "descripcion": "ONG venta de porno",
-        "actividades": "bañar en poringa",
+        "veterinaria": false,
+        "refugio": true,
+        "peluqueria":false,
         "direccion": [{"altura": 1099, "cod_calle": 10865, "cod_calle_cruce": null, "cod_partido": "malvinas_argentinas", "coordenadas": {"srid": 4326, "x": -34.52299128711134, "y": -58.700488331227234}, "direccion": "Juan Mar\u00eda Guti\u00e9rrez 1099, Malvinas Argentinas", "nombre_calle": "Juan Mar\u00eda Guti\u00e9rrez", "nombre_calle_cruce": "", "nombre_localidad": "Los Polvorines", "nombre_partido": "Malvinas Argentinas", "tipo": "calle_altura"}],
         "horarios": "08 a 20",
         "telefono": "123456789",
@@ -12,7 +14,9 @@
     {   
         "nombre": "Mati Sociedad anonima",
         "descripcion": "ONG se quiere ir a dormir",
-        "actividades": "hacer filtro de avisos",
+        "veterinaria": true,
+        "refugio": false,
+        "peluqueria":true,
         "direccion": [{"altura": 944, "cod_calle": 175768, "cod_calle_cruce": null, "cod_partido": "malvinas_argentinas", "coordenadas": {"srid": 4326, "x":-34.4751942 , "y":  -58.6945063020408}, "direccion": "Morse 944, Malvinas Argentinas", "nombre_calle": "Morse", "nombre_calle_cruce": "", "nombre_localidad": "Pablo Nogu\u00e9s", "nombre_partido": "Malvinas Argentinas", "tipo": "calle_altura"}],
         "horarios": "08 a 20",
         "telefono": "123456789",
