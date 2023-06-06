@@ -30,11 +30,22 @@ function exportarJson(){
         .then(data => {
             organizaciones = data;
             organizaciones.forEach((org)=> {
+                var mensajePopup;
                 console.log(org.direccion[0].coordenadas);
-                ret.push(new L.marker([org.direccion[0].coordenadas.x, org.direccion[0].coordenadas.y])
+                if (org.veterinaria){
+                    mensajePopup = mensajePopup + " Es veterinaria<br>"
+                }
+                if (org.peluqueria){
+                    mensajePopop = mensajePopup + " Es peluqueria<br>"
+                }
+                if (org.refugio){
+                    mensajePopup = mensajePopup + " Es un refugio <br>"
+                }
+                mark = new L.marker([org.direccion[0].coordenadas.x, org.direccion[0].coordenadas.y])
                 .addTo(map)
-                .bindPopup(org.nombre + ", " + org.direccion[0].nombre_calle + ', ' 
-                + org.direccion[0].nombre_partido + ', ' + org.direccion[0].nombre_localidad).openPopup());
+                .bindPopup("Nombre: " + org.nombre + "<br>Direccion: " + org.direccion[0].direccion + ', ' 
+                + org.direccion[0].nombre_localidad + '<br>Actividades:<br>  ' + mensajePopup).openPopup()
+                ret.push(mark);
             });
             resolve(ret);
         })
