@@ -11,7 +11,7 @@ function main() {
   
  
 
-  inpu.addEventListener("keyup", (event) => { // cada vez que ingresa una letra
+  inpu.addEventListener("keyup", (event) => {
     var di = "http://servicios.usig.buenosaires.gob.ar/normalizar/?direccion=" + document.getElementById("b").value;
     getFromURL(di, listarUsuarios);
     actualizarDirecciones();
@@ -20,11 +20,17 @@ function main() {
 }
 
 
+function presionoEnter(a,b) {
+  $("#b").keypress(function (e) {
+    if (e.which == 13) {
+      
+    }
+  });
+}
 
- 
 function actualizarDirecciones() { //actualiza dirreciones mientras escribe
   var lista = document.getElementById("lista-usuarios");
-  var elementos = lista.getElementsByTagName("li");
+  var elementos = lista.getElementsByTagName("ul");
 
   // Recorre los elementos en sentido inverso para evitar problemas con los índices
   for (var i = elementos.length - 1; i >= 0; i--) {
@@ -68,26 +74,10 @@ function listarUsuarios(response) {
 
   direcciones.forEach(usuario => {
     let item = document.createElement("li");
-    let button = document.createElement("button");
-    button.classList.add("boton");
 
-    button.innerText = usuario.direccion;
+    item.append(usuario.direccion);
+    lista.append(item);
 
-    button.addEventListener("click", function() {
-      // Acciones a realizar cuando se hace clic en el botón
-      
-      let input =document.getElementById("b");
-      input.value=button.innerText;
-      
-      // Aquí puedes agregar la lógica adicional que deseas ejecutar al hacer clic en el botón dentro de la lista.
-    });
-    
-
-    item.append(button);
-    
-    if (!lista.contains(item)){
-      lista.append(item);
-    }
     });
   
   if (direcciones.length == 1){

@@ -8,7 +8,7 @@
     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-  <title>Normalizador de Direcciones (JS)</title>
+  <title>Normalizador de Direcciones</title>
   <link rel="stylesheet" type="text/css" href="style.css" />
   <script src="jquery-1.3.2.min.js" type="text/javascript"></script>
   <script src="normalizadorDirecciones.min.js" type="text/javascript"></script>
@@ -71,42 +71,38 @@
   <div id="page">
     <div id="header">
       <div id="logo">
-        <h1 >Normalizador de Direcciones (JS)</h1>
+        <h1>Normalizador de Direcciones (JS)</h1>
       </div>
     </div>
-    <div id="buscador">
+    <div id="buscador" class="buscador">
       <form id="mainForm" accept-charset="utf-8">
-        <label for="b">Dirección</label>
+        <label>Nombre: </label><input type="text" id="nombre-organizacion">
+        <br>
+        <br>
+
+        <label>Descripción</label>
+
+        <br>
+
+        <textarea id="descripcion" name="descripcion" rows="10" cols="40" maxlength="300"></textarea>
+
+        <br>
+        <br>
+
+        <label for="b">Dirección: </label>
         <input type="text" size="40" name="b" id="b" title="Dirección a buscar" class="text" />
-        <span id="ejemplo" class="">ej.: Callao y Corrientes, Florida 550, etc.</span>
+        <span id="ejemplo">ej.: Callao y Corrientes, Florida 550, etc.</span>
       </form>
     </div>
     <div id="footer">
-      <p class="">&copy; 2010-2013 USIG - Unidad de Sistemas de Información Geográfica</p>
+      <p>&copy; 2010-2013 USIG - Unidad de Sistemas de Información Geográfica</p>
     </div>
   </div>
-  <ul class="" id="lista-usuarios"></ul>
+  <ul id="lista-usuarios"></ul>
   <div id="map">
-  
-
-
-
-
-
-
+    
   </div>
 
-
-  <footer>
-
-  </footer>
-
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
-integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
-crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
-integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
-crossorigin="anonymous"></script>
 </body>
 
 </html>
