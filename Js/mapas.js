@@ -2,9 +2,10 @@ var map;
 let markers = [];
 let markersFiltrados = [];
 const boton = document.getElementById("actualizar-organizacion");
-const verTodosLosMarkers = document.getElementById("ver-todo");
-var actualizarOrganizaciones = document.getElementById("actualizar-organizacion");
 boton.addEventListener('click', mostrarOrganizacionFiltrada);
+const verTodosLosMarkers = document.getElementById("ver-todo");
+verTodosLosMarkers.addEventListener('click', mostrarTodasLasOrg);
+
 var filtroVeterinariaIsChecked = true;
 var filtropeluqueriaIsChecked = true;
 var filtrorefugioIsChecked = true;
@@ -53,7 +54,7 @@ function checkpeluqueria() {
 }
 
 function mostrarOrganizacionFiltrada() {
-    removerMarkers(markersFiltrados);
+    removerMarkers();
     checkVet();
     checkRefugio();
     checkpeluqueria();
@@ -65,7 +66,8 @@ function mostrarOrganizacionFiltrada() {
 }
 
 function mostrarTodasLasOrg(){
-    removerMarkers(markersFiltrados);
+    console.log("mostrar todos los markers");
+    removerMarkers();
     añadirMarkers(markers);
 }
 
@@ -127,7 +129,7 @@ function crearMapa() {
     }).addTo(map);
 }
 
-function removerMarkers(arrDeMarkers){
+function removerMarkers(){
     map.eachLayer(function(layer) {
   if (layer instanceof L.Marker) {
     map.removeLayer(layer);
