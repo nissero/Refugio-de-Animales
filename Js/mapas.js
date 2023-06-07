@@ -158,6 +158,9 @@ function exportarJson() {
                     var veterinaria = false;
                     var peluqueria = false;
                     var refugio = false;
+                    var img = org.img;
+                    var width = 75;
+                    var height = 75;
                     if (org.veterinaria) {
                         mensajePopup = mensajePopup + " Es veterinaria<br>"
                         veterinaria = true;
@@ -170,8 +173,9 @@ function exportarJson() {
                         mensajePopup = mensajePopup + " Es un refugio <br>"
                         refugio = true;
                     }
-                    var mark = new L.marker([org.direccion[0].coordenadas.x, org.direccion[0].coordenadas.y], { veterinaria, refugio, peluqueria })
-                        .bindPopup("Nombre: " + org.nombre + "<br>Direccion: " + org.direccion[0].direccion + ', '
+                    var mark = new L.marker([org.direccion[0].coordenadas.x, org.direccion[0].coordenadas.y], { veterinaria, refugio, peluqueria})
+                        .bindPopup('<img src="' + img + '" alt="Imagen" width='+ width + '"height="' + height + '">"' + '<br>' + "Nombre: " + org.nombre +
+                        "<br>Descripción: "+ org.descripcion + "<br>Direccion: " + org.direccion[0].direccion + ', '
                             + org.direccion[0].nombre_localidad + '<br>Actividades:<br>  ' + mensajePopup).openPopup()
                     ret.push(mark);
                 });

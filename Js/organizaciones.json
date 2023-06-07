@@ -26,25 +26,37 @@
     {   
         "nombre": "La veterinaria de la vuelta de mi casa",
         "descripcion": "Somos una veterinaria fachera facherita",
-        "veterinaria": false,
+        "veterinaria": true,
         "refugio": false,
-        "peluqueria":false,
-        "direccion": [{"altura": 4566, "cod_calle": 145597, "cod_calle_cruce": null, "cod_partido": "malvinas_argentinas", "coordenadas": {"srid": 4326, "x": "-58.693567392251175", "y": "-34.474915622820845"}, "direccion": "Maure 4566, Malvinas Argentinas", "nombre_calle": "Maure", "nombre_calle_cruce": "", "nombre_localidad": "Pablo Nogu\u00e9s", "nombre_partido": "Malvinas Argentinas", "tipo": "calle_altura"}],
+        "peluqueria":true,
+        "direccion": [{"altura": 4566, "cod_calle": 145597, "cod_calle_cruce": null, "cod_partido": "malvinas_argentinas", "coordenadas": {"srid": 4326, "x": "-34.474915622820845", "y": "-58.693567392251175"}, "direccion": "Maure 4566, Malvinas Argentinas", "nombre_calle": "Maure", "nombre_calle_cruce": "", "nombre_localidad": "Pablo Nogu\u00e9s", "nombre_partido": "Malvinas Argentinas", "tipo": "calle_altura"}],
         "horarios": "08 a 20",
         "telefono": "123456789",
         "img": "https://lh5.googleusercontent.com/p/AF1QipO0ZnrAiP_MY06iS4KmriyApcBOvbes01Yeo0b4=w408-h306-k-no"
     },
     {   
         "nombre": "River Plate",
-        "descripcion": "Hola somos River Plate! Nos comimos 5 en Brasil, nos encanta hacer papelones en la Copa Libertadores de America. Por eso hoy vamos a perder contra Fluminense.",
+        "descripcion": "Hola somos River Plate 🅱️🅱️🅱️👻👻👻! Nos comimos 5 en Brasil, nos encanta hacer papelones en la Copa Libertadores de America. Por eso hoy vamos a perder contra Fluminense. Desde el 26/06/11 hay un fantasma en mi cancha, si alguien tiene el contacto de los cazafantasmas por favor comuniquese con nosotros",
         "veterinaria": true,
         "refugio": true,
         "peluqueria":true,
-        "direccion": [{"altura": 7597, "cod_calle": 6025, "cod_calle_cruce": null, "cod_partido": "caba", "coordenadas": {"srid": 4326, "x": "-58.449446", "y": "-34.546690"}, "direccion": "FIGUEROA ALCORTA, PRES. AV. 7597, CABA", "nombre_calle": "FIGUEROA ALCORTA, PRES. AV.", "nombre_calle_cruce": "", "nombre_localidad": "CABA", "nombre_partido": "CABA", "tipo": "calle_altura"}],
+        "direccion": [{"altura": 7597, "cod_calle": 6025, "cod_calle_cruce": null, "cod_partido": "caba", "coordenadas": {"srid": 4326, "x": "-34.546690", "y": "-58.449446"}, "direccion": "FIGUEROA ALCORTA, PRES. AV. 7597, CABA", "nombre_calle": "FIGUEROA ALCORTA, PRES. AV.", "nombre_calle_cruce": "", "nombre_localidad": "CABA", "nombre_partido": "CABA", "tipo": "calle_altura"}],
         "horarios": "08 a 20",
         "telefono": "123456789",
         "img": "https://i.ytimg.com/vi/NLlsS44lm50/maxresdefault.jpg"
+    },
+    {   
+        "nombre": "Carpinchos Chetos SA",
+        "descripcion": "Hola gordis, somos Carpinchos Chetos SA, somos los carpinchos más chetos de la zona, no aceptamos grasas, tenemos equipo de rugby y de jockey para que puedan entrenar tus nenes y nenas, si no ganas mas de 2millones de pesos por quincena no te comuniques. Para saber nuestra dirección mandanos un mensaje con tu sueldo, chauuuuu",
+        "veterinaria": true,
+        "refugio": true,
+        "peluqueria":true,
+        "direccion": [{"altura": null, "cod_calle": 40926, "cod_calle_cruce": null, "cod_partido": "tigre", "coordenadas": {"srid": 4326, "x": "-34.40238718494368", "y": "-58.66840249814762"},  "direccion": "Avenida Agust\u00edn M. Garc\u00eda, Nordelta, Tigre", "nombre_calle": "Avenida Agust\u00edn M. Garc\u00eda", "nombre_calle_cruce": null, "nombre_localidad": "Nordelta", "nombre_partido": "Tigre", "tipo": "calle"}],
+        "horarios": "08 a 20",
+        "telefono": "123456789",
+        "img": "https://pbs.twimg.com/profile_images/1262640760077324288/4oXlNEN8_400x400.jpg"
     }
+
     
 
 ]
