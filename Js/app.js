@@ -173,14 +173,14 @@ exportarJson().then(nuevoArrayAvisos => {
 
 function mostrarAvisos() {
     contenerDeProcutos.innerHTML = "";
-    let adop = checkAdopcion();
+    checkAdopcion();
     checkPerdido();
     checkPerro();
     checkGato();
     checkTortuga();
     checkAve();
 
-
+/*
         var combinaciones = [
             checkAdopcion()
             ,checkPerdido()
@@ -199,8 +199,8 @@ function mostrarAvisos() {
 
             
         }
+        */
 
-    console.log(combinaciones);
     // 1 ver todos
     if (filtroAdopcionIsChecked && filtroPerdidoIsChecked && filtroIsPerroIsChecked
         && filtroIsGatoIsChecked && filtroIsTortugaIsChecked && filtroIsAveIsChecked) {
@@ -311,6 +311,7 @@ function mostrarAvisos() {
         && filtroIsGatoIsChecked && !filtroIsTortugaIsChecked && !filtroIsAveIsChecked) {
         añadirAvisosAdopcionAlDoc(avisos.filter(Aviso.tipoAviso != "Adopcion"
             && Aviso.tipo != "ave" && Aviso.tipo != "tortuga"));
+            console.log("caso 20")
     }
 
 
