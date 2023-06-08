@@ -1,26 +1,22 @@
 [
-
-    {   
+    {
         "titulo": "Se da en adopcion, pasa mucho tiempo en la universidad y no lo aguanto",
         "perfilAnimal": "Naza tiene 24 y es profesor de introduccion a la programacion",
         "telefono": "123456789",
         "cuidados": "se baña",
         "tipoAviso": "Adopcion",
-        "img": "https://pbs.twimg.com/media/FKDgV56WQAEIOJN.jpg"
-
+        "img": "https://pbs.twimg.com/media/FKDgV56WQAEIOJN.jpg",
+        "tipo": "perro"
     },
-
-
-    {   
+    {
         "titulo": "Se da en adopcion, me mira muy fijo y me incomoda",
         "perfilAnimal": "Tiene 4 años, a la noche se levanta y me mira fijo",
         "telefono": "123456789",
         "cuidados": "va al oculista",
         "tipoAviso": "Adopcion",
-        "img": "https://i.pinimg.com/736x/94/79/82/94798298d9c7aa8f785582bb2860ec5e.jpg"
-
+        "img": "https://i.pinimg.com/736x/94/79/82/94798298d9c7aa8f785582bb2860ec5e.jpg",
+        "tipo": "perro"
     },
-
     {
         "titulo": "Se busca: perro informatico",
         "perfilAnimal": "Que sea llevado a la luna",
@@ -28,56 +24,47 @@
         "direccion": " Juan María Gutiérrez 1150, B1613 Los Polvorines, Provincia de Buenos Aires",
         "tipoAviso": "perdidoEncontrado",
         "fecha": "4/6/2023",
-        "img": "https://pbs.twimg.com/media/FtzRPu8acAA18xB.jpg"
+        "img": "https://pbs.twimg.com/media/FtzRPu8acAA18xB.jpg",
+        "tipo": "perro"
     },
-
     {
         "titulo": "Lo doy en adopción! Esta vizco",
         "perfilAnimal": "Se llama norberto y se perdió, seguro quiso mirar para un lado y se perdio",
         "telefono": "12345243249",
         "cuidados": "no se conecta",
         "tipoAviso": "Adopcion",
-        "img": "https://pbs.twimg.com/media/Fe7XVhoWAAANVb-?format=jpg&name=medium"
+        "img": "https://pbs.twimg.com/media/Fe7XVhoWAAANVb-?format=jpg&name=medium",
+        "tipo": "perro"
     },
-
-
     {
         "titulo": "Se da en adopcion, pica las paredes",
         "perfilAnimal": "ESTA LOCO",
         "telefono": "12345243249",
         "cuidados": "darle madera",
         "tipoAviso": "Adopcion",
-        "img": "https://e00-elmundo.uecdn.es/america/imagenes/2011/11/18/gentes/1321583329_0.jpg"
+        "img": "https://e00-elmundo.uecdn.es/america/imagenes/2011/11/18/gentes/1321583329_0.jpg",
+        "tipo": "Ave"
     },
-
-
-
-
-
-
     {
         "titulo": "Se busca: Se escapo del guiso",
         "perfilAnimal": "Estaba preparando tortuga al champignon y se escapo",
         "telefono": "12345243249",
-        "cuidados": "Carne tierna",
+        "direccion": " Juan María Gutiérrez 1150, B1613 Los Polvorines, Provincia de Buenos Aires",
         "tipoAviso": "perdidoEncontrado",
-        "img": "https://cdn0.psicologia-online.com/es/posts/8/8/5/tecnica_de_la_tortuga_cuento_para_trabajar_el_autocontrol_4588_600.jpg"
+        "fecha": "4/6/2023",
+        "img": "https://cdn0.psicologia-online.com/es/posts/8/8/5/tecnica_de_la_tortuga_cuento_para_trabajar_el_autocontrol_4588_600.jpg",
+        "tipo": "tortuga"
     },
-
     {
         "titulo": "Lo doy en adopción! Es demasiado fiestero y no lo aguanto más!!!",
         "perfilAnimal": "Se llama gatuno, vive de joda en mi casa e invita a todas las gatas de la cuadra!! Me tiene podrida!!",
         "telefono": "12345243249",
         "cuidados": "Tiene un equipo de música y de luces para sus fiestas",
         "tipoAviso": "Adopcion",
-        "img": "https://gifdb.com/images/high/disco-lights-cat-staring-at-camera-p4rur2yr6ro2nxa8.webp"
+        "img": "https://gifdb.com/images/high/disco-lights-cat-staring-at-camera-p4rur2yr6ro2nxa8.webp",
+        "tipo": "gato"
     },
-
-
-    
-
-
-    {   
+    {
         "titulo": "Se busca: desde el 2011 no se encuentra su categoria",
         "perfilAnimal": "Desaparecio entre humo y llamas el 26 de junio de 2011, de vez en cuando se ve un fantasma recordandolo",
         "telefono": "14183248",
@@ -85,12 +72,10 @@
         "fecha": "26 de junio de 2011",
         "direccion": "FIGUEROA ALCORTA, PRES. AV. 7597, CABA",
         "img": "https://www.clarin.com/img/2019/06/25/RYYrkY_45_1256x620__1.jpg",
-        "contacto": "123124124"
-
+        "contacto": "123124124",
+        "tipo": "perro"
     },
-
-
-    {   
+    {
         "titulo": "Se busca: desde el 18/12/22 no se lo encuentra en ningun lado!!!",
         "perfilAnimal": "Su nombre es Kylian, pero le dicen Donatello, desaparecio el 18/12/22 en Qatar, nadie sabe donde está!!! Dicen que se lo vio vagando por Francia",
         "telefono": "14183248",
@@ -98,9 +83,7 @@
         "fecha": "18 de Diciembre de 2022",
         "direccion": "LUSAIL STADIUM, QATAR",
         "img": "https://s1.sportstatics.com/relevo/www/multimedia/202212/18/media/cortadas/Mbappe-botadeoro_20221218195228-RR7D1mUuGbGSG6Jd2Qnpx9M-720x960@Relevo.jpg?cw=414&ch=552&img=default",
-        "contacto": "123124124"
-
+        "contacto": "123124124",
+        "tipo": "tortuga"
     }
-
-
 ]
