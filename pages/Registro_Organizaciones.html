@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,23 +10,21 @@
     <script src="../jquery-1.3.2.min.js" type="text/javascript"></script>
     <script src="../normalizadorDirecciones.min.js" type="text/javascript"></script>
     <script src="../normalizadorOrganizacion.js" type="text/javascript"></script>
-
-    <script></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <title>Document</title>
+
+    <title>Registro de organizaciones</title>
+
 </head>
 
 <body onload="main()">
 
-
-
-
     <header>
         <h1 class="text-center">Refugios de animales</h1>
         <h3 class="">Registro de organizaciones</h3>
-
     </header>
+
+    <br>
 
     <head>
 
@@ -47,109 +46,112 @@
                         <li class="nav-item">
                             <a class="nav-link" href="./registro_organizaciones.html">Registro organizaciones</a>
                         </li>
-                        <li class="nav-item">
+                        <!-- <li class="nav-item">
                             <a class="nav-link" href="../registro_organizaciones.html">pruebas con el normalizados</a>
-                        </li>
+                        </li> -->
                     </ul>
                 </div>
             </div>
         </nav>
     </head>
 
-
-
-
+    <br>
 
     <div class="contenido">
 
         <form id="formulario-agregar-organizacion" class="was-validated text-white">
+
             <div class="col-md-4">
-                <label for="nombre-organizacion" class="form-label">Nombre organizacion</label>
+                <label for="nombre-organizacion" class="form-label">Nombre organización:</label>
                 <input type="text" class="form-control is-valid" id="nombre-organizacion" required>
                 <div class="valid-feedback">
                     Completado!
                 </div>
             </div>
 
+            <br>
+
             <div class="col-md-4">
-                <label for="descripcion-organizacion" class="form-label">Ingrese breve descripcion</label>
-                <input type="text" class="form-control is-valid" id="descripcion-organizacion" required>
+                <label for="descripcion-organizacion" class="form-label">Descripción:</label>
+                <br>
+                <textarea class="form-control is-valid" id="descripcion-organizacion" cols="50" rows="10" required></textarea>
                 <div class="valid-feedback">
                     Completado!
                 </div>
             </div>
+
+            <br>
 
             <div  class="col-md-4">
+
+                <label for="">Servicios:</label>
+                
                 <label for="veterinaria-organizacion">Veterinaria</label>
                 <input name="veterinaria-organizacion" type="checkbox" id="veterinaria-organizacion" >
-                <br>
+                
 
-                <label for="refugio-organizacion">refugio</label>
+                <label for="refugio-organizacion">Refugio</label>
                 <input name="refugio-organizacion" type="checkbox" id="refugio-organizacion">
-                <br>
+                
 
-                <label for="peluqueria-organizacion">peluqueria</label>
+                <label for="peluqueria-organizacion">Peluqueria</label>
                 <input name="peluqueria-organizacion" type="checkbox" id="peluqueria-organizacion">
-                <br>
-            </div>
-
-
-            <div class="col-md-4">
-                <label for="b">Dirección</label>
-                <input type="text" size="40" name="b" id="b" title="Dirección " class="text" required />
-                <span id="ejemplo" class="">ej.: Callao y Corrientes, Florida 550, etc.</span>
-                <ul class="" id="lista-usuarios"></ul>
-                <div class="valid-feedback">
-                    Completado!
-                </div>
                 
             </div>
 
+            <br>
 
             <div class="col-md-4">
-                <label for="horarios-organizacion" class="form-label">Ingrese los horarios</label>
+                <label for="b">Dirección:</label>
+                <input type="text" size="40" name="b" id="b" title="Dirección " class="text" required />
+                <label id="ejemplo" class="">Ingresar calle y altura. Ej: Corrientes 1152</label>
+                <ul class="" id="lista-usuarios"></ul>
+                <div class="valid-feedback">
+                    Completado!
+                </div>  
+            </div>
+
+            <br>
+
+            <div class="col-md-4">
+                <label for="horarios-organizacion" class="form-label">Horarios:</label>
                 <input type="text" class="form-control is-valid" id="horarios-organizacion" required>
                 <div class="valid-feedback">
                     Completado!
                 </div>
             </div>
 
+            <br>
 
             <div class="col-md-4">
-                <label for="telefono-organizacion" class="form-label">Ingrese los telefono</label>
+                <label for="telefono-organizacion" class="form-label">Teléfonos:</label>
                 <input type="text" class="form-control is-valid" id="telefono-organizacion" required>
                 <div class="valid-feedback">
                     Completado!
                 </div>
             </div>
 
+            <br>
+
             <div class="col-md-4">
-                <label for="img-organizacion" class="form-label">Ingrese link de su img</label>
-                <input type="text" class="form-control is-valid" id="img-organizacion" required>
+                <label for="img-organizacion" class="form-label">Foto:</label>
+                <input type="file" class="form-control is-valid" id="img-organizacion" required>
                 <div class="valid-feedback">
                     Completado!
                 </div>
             </div>
 
-            <div class="mb-3">
-                <button class="btn btn-primary" id="agregar-organizacion" type="submit">Submit form</button>
-            </div>
-        </form>
+            <br>
 
+            <div class="mb-3">
+                <button class="btn btn-primary" id="agregar-organizacion" type="submit">Enviar</button>
+            </div>
+
+        </form>
 
     </div>
 
-
-
-
-
-
-
-
-
-
 </body>
-
 
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
     integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
@@ -157,7 +159,6 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
     integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
     crossorigin="anonymous"></script>
-
 
 <script src="../Js/agregarOrg.js"></script>
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
