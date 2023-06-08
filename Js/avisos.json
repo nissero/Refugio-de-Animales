@@ -22,8 +22,8 @@
     },
 
     {
-        "titulo": "No se conecta en las llamadas, no sabemos donde anda!!!",
-        "perfilAnimal": "Lean tiene 24 y no se conecta",
+        "titulo": "Se busca: perro informatico",
+        "perfilAnimal": "Que sea llevado a la luna",
         "telefono": "123456789",
         "direccion": " Juan María Gutiérrez 1150, B1613 Los Polvorines, Provincia de Buenos Aires",
         "tipoAviso": "perdidoEncontrado",
@@ -38,6 +38,30 @@
         "cuidados": "no se conecta",
         "tipoAviso": "Adopcion",
         "img": "https://pbs.twimg.com/media/Fe7XVhoWAAANVb-?format=jpg&name=medium"
+    },
+
+
+    {
+        "titulo": "Se da en adopcion, pica las paredes",
+        "perfilAnimal": "ESTA LOCO",
+        "telefono": "12345243249",
+        "cuidados": "darle madera",
+        "tipoAviso": "Adopcion",
+        "img": "https://e00-elmundo.uecdn.es/america/imagenes/2011/11/18/gentes/1321583329_0.jpg"
+    },
+
+
+
+
+
+
+    {
+        "titulo": "Se busca: Se escapo del guiso",
+        "perfilAnimal": "Estaba preparando tortuga al champignon y se escapo",
+        "telefono": "12345243249",
+        "cuidados": "Carne tierna",
+        "tipoAviso": "perdidoEncontrado",
+        "img": "https://cdn0.psicologia-online.com/es/posts/8/8/5/tecnica_de_la_tortuga_cuento_para_trabajar_el_autocontrol_4588_600.jpg"
     },
 
     {

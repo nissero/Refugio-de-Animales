@@ -165,7 +165,7 @@ function añadirAvisosAdopcionAlDoc() {
             </div>
             <ul class="list-group list-group-flush">
               <li class="list-group-item">${aviso.titulo}</li>
-              <li class="list-group-item">${aviso.cuidados}/li>
+              <li class="list-group-item">${aviso.cuidados}</li>
               <li class="list-group-item">${aviso.telefono}</li>
             </ul>
           </div>`

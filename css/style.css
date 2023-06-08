@@ -53,7 +53,7 @@ label{
 #cuerpoHTML {
   grid-area: "contenido";
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   flex-wrap: wrap;
   border: 2px;
   
