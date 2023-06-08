@@ -172,12 +172,34 @@ exportarJson().then(nuevoArrayAvisos => {
 
 function mostrarAvisos() {
     contenerDeProcutos.innerHTML = "";
-    checkAdopcion();
+    let adop = checkAdopcion();
     checkPerdido();
     checkPerro();
     checkGato();
     checkTortuga();
     checkAve();
+
+
+        var combinaciones = [
+            checkAdopcion()
+            ,checkPerdido()
+            ,checkPerro()
+            ,checkGato()
+            ,checkTortuga()
+            ,checkAve()
+        ]
+
+        for (let index = 0; index < combinaciones.length; index++) {
+
+            if(combinaciones[index] === adop){
+                console.log("SIIIIIIIIII");
+
+            }
+
+            
+        }
+
+    console.log(combinaciones);
     // 1 ver todos
     if (filtroAdopcionIsChecked && filtroPerdidoIsChecked && filtroIsPerroIsChecked
         && filtroIsGatoIsChecked && filtroIsTortugaIsChecked && filtroIsAveIsChecked) {
@@ -263,6 +285,7 @@ function mostrarAvisos() {
         && !filtroIsGatoIsChecked && !filtroIsTortugaIsChecked && !filtroIsAveIsChecked) {
         añadirAvisosAdopcionAlDoc(avisos.filter(Aviso => Aviso.tipo != "gato" && Aviso.tipo != "perro"
             && Aviso.tipo != "ave" && Aviso.tipo != "tortuga"));
+        console.log("asd")
     }
     // 17 no Adopcion
     else if (!filtroAdopcionIsChecked && filtroPerdidoIsChecked && filtroIsPerroIsChecked
@@ -284,7 +307,7 @@ function mostrarAvisos() {
 
     // 20 - no adopcion y ave y tortuga
     else if (!filtroAdopcionIsChecked && filtroPerdidoIsChecked && filtroIsPerroIsChecked
-        && filtroIsGatoIsChecked && filtroIsTortugaIsChecked && !filtroIsAveIsChecked) {
+        && filtroIsGatoIsChecked && !filtroIsTortugaIsChecked && !filtroIsAveIsChecked) {
         añadirAvisosAdopcionAlDoc(avisos.filter(Aviso.tipoAviso != "Adopcion"
             && Aviso.tipo != "ave" && Aviso.tipo != "tortuga"));
     }
@@ -292,16 +315,6 @@ function mostrarAvisos() {
 
 
 
-
-
-
-
-    // ver solo perdido
-    else if (!filtroAdopcionIsChecked && filtroPerdidoIsChecked) {
-        //    añadirAvisosAdopcionAlDoc( avisosPerdidos = avisos.filter(Aviso => Aviso.tipoAviso == "perdidoEncontrado"));
-
-
-    }
     else {
         console.log("no hizo nada")
     }
