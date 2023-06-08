@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"
   integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
   crossorigin="">
@@ -9,21 +10,18 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../css/sytyleBusOrg.css">
-
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  <title>Document</title>
+
+  <title>Buscar organización</title>
+
 </head>
 
 <body>
 
- 
-
-
     <header id="header">
       <h1 class="text-center">Refugios de animales</h1>
-      <h3 class="">Busqueda de organizaciones</h3>
-
+      <h3 class="">Buscar organizaciones</h3>
     </header>
 
     <div id="menu">
@@ -41,14 +39,14 @@
                 <a class="nav-link active" aria-current="page" href="./avisos.html">Avisos</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="./Busqueda_organizacion.html">Busqueda de organizacion</a>
+                <a class="nav-link" href="./Busqueda_organizacion.html">Buscar organización</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="./registro_organizaciones.html">Registro organizaciones</a>
               </li>
-              <li class="nav-item">
+              <!-- <li class="nav-item">
                 <a class="nav-link" href="../registro_organizaciones.html">pruebas con el normalizados</a>
-              </li>
+              </li> -->
             </ul>
           </div>
         </div>
@@ -64,25 +62,27 @@
         </div>
         <div class="col-md-4">
           <div class="checkbox-container">
+
             <h4>Filtros de busqueda</h4>
+
             <!-- Resta Modificar los filtros-->
             <label for="Veterinaria">Veterinaria</label>
             <input name="Veterinaria" type="checkbox" id="Veterinaria" value="Veterinaria" checked>
 
-            <label for="refugio">refugio</label>
+            <label for="refugio">Refugio</label>
             <input name="refugio" type="checkbox" id="refugio" value="refugio" checked>
 
-            <label for="peluqueria">peluqueria</label>
+            <label for="peluqueria">Peluqueria</label>
             <input name="peluqueria" type="checkbox" id="peluqueria" value="peluqueria" checked>
 
           </div>
+
           <button id="actualizar-organizacion">Aplicar filtro</button>
-          <button id="ver-todo">ver todas las organizaciones</button>
+          <button id="ver-todo">Ver todas las organizaciones</button>
 
         </div>
       </div>
     </div>
-
 
     <div id="contenido">
 
@@ -92,31 +92,24 @@
       <div id="cuerpoOrg" class="container-fluid" style="padding: 1%;">
       </div>
 
-
-
-
     </div>
 
     <footer class="footer text-white" id="footer">
-      <a class="">Asociacion perruna salvaje</a>
+      <a class="">Asociación Perruna Salvaje</a>
     </footer>
 
   </div>
+
   <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"
   integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
-  crossorigin=""></script>s
+  crossorigin=""></script>
 
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+    integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+    integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
 
-
-
-
-
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
-  integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
-  integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
-
-<script src="../Js/mapas.js"></script>
-<script src="../Js/appOrg.js"></script>
+  <script src="../Js/mapas.js"></script>
+  <script src="../Js/appOrg.js"></script>
 
 </html>

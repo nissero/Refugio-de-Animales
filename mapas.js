@@ -73,10 +73,13 @@ function listarUsuarios(response) {
   
 
   direcciones.forEach(usuario => {
-    let item = document.createElement("li");
+    let item = document.createElement("ul");
 
     item.append(usuario.direccion);
-    lista.append(item);
+    
+    if(!lista.contains(item)){
+      lista.append(item);  
+    }
 
     });
   
