@@ -166,6 +166,7 @@ function checkAve() {
 
 
 
+
 exportarJson().then(nuevoArrayAvisos => {
     avisos = nuevoArrayAvisos;
 });
@@ -316,12 +317,30 @@ function mostrarAvisos() {
 
 
     else {
-        console.log("no hizo nada")
+        console.log("cae en el else que falta que siga desarrollando los posibles casos")
     }
 }
 
+
+function mostrarTodosAvisos(){
+   
+    añadirAvisosAdopcionAlDoc(avisos);
+
+}
+
+
+
+
+
+
 const botonActualizar = document.getElementById("actualizar");
+
 botonActualizar.addEventListener("click", mostrarAvisos);
+
+
+
+
+
 
 function añadirAvisosAdopcionAlDoc(avisosAMostrar) {
     avisosAMostrar.forEach((aviso) => {
