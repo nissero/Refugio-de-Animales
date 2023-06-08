@@ -93,9 +93,6 @@ function checkPerdido() {
 
 exportarJson().then(nuevoArrayAvisos => {
     avisos = nuevoArrayAvisos;
-    console.log(avisos);
-    console.log(avisosPerdidos);
-    console.log(avisosAdopcion);
 });
 
 function mostrarAvisos() {
