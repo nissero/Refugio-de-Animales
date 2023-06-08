@@ -19,8 +19,14 @@ body {
 
 }
 
-.filtro {
+#filtro {
   grid-area: "filtro";
+  background-color: white;
+  display:inline-block;
+  height: 50%;
+  width: 40%;
+ 
+  
 }
 
 
@@ -40,12 +46,17 @@ body {
 
 }
 
-.cuerpoHTML {
+#cuerpoHTML {
   grid-area: "contenido";
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
   border: 2px;
+  
+}
+
+.aviso{
+  background-color: white;
 }
 
 header {

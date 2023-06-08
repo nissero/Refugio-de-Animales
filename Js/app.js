@@ -148,6 +148,7 @@ botonActualizar.addEventListener("click", mostrarAvisos);
 function añadirAvisosAdopcionAlDoc() {
     avisosAdopcion.forEach((aviso) => {
         const div = document.createElement(`div`)
+        div.classList.add('aviso');
         console.log(3);
         const image = document.createElement("img")
         image.src = aviso.img
@@ -156,52 +157,51 @@ function añadirAvisosAdopcionAlDoc() {
         //image.classList.add("imagenSeguro")
         console.log(323432432);
         div.innerHTML =
-            `<div class="card mb-3" style="max-width: 540px;">
-                    <div class="row g-0">
-                            <div class="col-md-4">
-                                <img src="${aviso.img}" class="img-fluid rounded-start" alt="..."> 
-                            </div>
-                        <div class="col-md-8">
-                            <div class="card-body">
-                                <h5 class="card-title"> ${aviso.titulo}</h5>
-                                <p class="card-text">Tipo de aviso: ${aviso.tipoAviso}</p>
-                                <p class="card-text">Perfil del animal: ${aviso.perfilAnimal}</p>
-                                <p class="card-text"><small class="text-muted">  Cuidados: ${aviso.cuidados}  </small></p>
-                                <p class="card-text"><small class="text-muted">  Contacto: ${aviso.telefono}  </small></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>`
+            `<div class="card" style="width: 18rem;">
+            <img src="${aviso.img}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">${aviso.titulo}</h5>
+              <p class="card-text">${aviso.perfilAnimal}</p>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">${aviso.titulo}</li>
+              <li class="list-group-item">${aviso.cuidados}/li>
+              <li class="list-group-item">${aviso.telefono}</li>
+            </ul>
+          </div>`
         contenerDeProcutos.append(div)
     })
 }
 
+
+
+
 function añadirAvisosPerdidaAlDoc() {
     avisosPerdidos.forEach((aviso2) => {
         const div = document.createElement(`div`)
+        div.classList.add('aviso');
         console.log("imprimendo avisos de perdida");
         const image = document.createElement("img")
         image.src = aviso2.img
         div.innerHTML =
-                `<div class="card mb-3" style="max-width: 540px;">
-                                    <div class="row g-0">
-                                        <div class="col-md-4">
-                                            <img src="${aviso2.img}" class="img-fluid rounded-start" alt="..."> 
-                                        </div>
-                                    <div class="col-md-8">
-                                        <div class="card-body">
-                                            <h5 class="card-title"> ${aviso2.titulo}</h5>
-                                            <p class="card-text">Tipo de aviso: ${aviso2.tipoAviso}</p>
-                                            <p class="card-text">Perfil del animal: ${aviso2.perfilAnimal}</p>
-                                            <p class="card-text"><small class="text-muted">  Fecha de encuentro: ${aviso2.fecha}  </small></p>
-                                            <p class="card-text"><small class="text-muted">  Contacto: ${aviso2.telefono}  </small></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>`
+                `<div class="card" style="width: 18rem;">
+                <img src="${aviso2.img}" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">${aviso2.titulo}</h5>
+                  <p class="card-text">${aviso2.perfilAnimal}</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">${aviso2.titulo}</li>
+                  <li class="list-group-item">${aviso2.cuidados}/li>
+                  <li class="list-group-item">${aviso2.telefono}</li>
+                </ul>
+              </div>`
             contenerDeProcutos.append(div)
     })
 }
+
+
+
 
 function añadirAvisoAlDoc() {
     avisos.forEach((aviso) => {
