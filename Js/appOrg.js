@@ -175,7 +175,7 @@ const verTodasLasOrg = document.getElementById("ver-todo");
 
 verTodasLasOrg.addEventListener('click', function () {
   contenerDeProcutos.innerHTML = "";
-  mostrarTodasLasOrg();
+  añadirOrganizacionesAldoc(organizaciones);
 })
 
 function mostrarOrganizacionFiltrada() {
@@ -233,44 +233,6 @@ function añadirOrganizacionesAldoc(orgFiltro) {
 
 
 
-
-    contenerDeProcutos.append(div)
-  })
-}
-
-function mostrarTodasLasOrg() {
-
-
-  organizaciones.forEach((organ) => {
-    const div = document.createElement(`div`)
-    const image = document.createElement("img")
-    image.src = organ.img
-    div.innerHTML = `<div class="card mb-3" style="max-width: 540px;">
-
-        <div class="row g-0">
-          <div class="col-md-4">
-          <img src="${organ.img}" class="img-fluid rounded-start" alt="..."> 
-          </div>
-          <div class="col-md-8">
-            <div class="card-body">
-              <h5 class="card-title">  Nombre ONG:  ${organ.nombre}</h5>
-              <p class="card-text">Descripcion : ${organ.descripcion}</p>
-              <p class="card-text">veterinaria : ${organ.veterinaria}</p>
-              <p class="card-text">refugio : ${organ.refugio}</p>
-              <p class="card-text">peluqueria : ${organ.peluqueria}</p>
-              <p class="card-text">Direccion : ${organ.direccion[0].direccion}</p>
-              <p class="card-text">Horarios : ${organ.horarios}</p>
-              <p class="card-text">Telefono : ${organ.telefono}</p>
-
-            </div>
-          </div>
-        </div>
-      </div>`
-
-    if (organ.destacado == true) {
-      div.classList.add("destacado")
-      div.insertAdjacentHTML("beforeend", `<h3 class="card-text text-center">DESTACADO</h3>`)
-    }
 
     contenerDeProcutos.append(div)
   })
