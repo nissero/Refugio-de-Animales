@@ -1,5 +1,5 @@
 body {
-    background-image: url("https://assets.change.org/photos/0/je/ws/DfjEWsdfwKdZxRg-800x450-noPad.jpg?1514563082");
+    background-image: url("https://i.pinimg.com/originals/78/a0/ac/78a0acb28ffd134d016cd21ea690ba69.jpg");
 
     height: 100vh;
 }
@@ -32,6 +32,7 @@ body {
 
 .filtro {
     grid-area: "filtro";
+    background-color: white;
     padding-bottom: 10px;
 
 }

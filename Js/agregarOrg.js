@@ -45,9 +45,7 @@ formulario.addEventListener('click', function (event) {
 
   var nombreORg = document.getElementById("nombre-organizacion").value;
   var descripcionOrg = document.getElementById("descripcion-organizacion").value;
-  //  var veterinariaOrg = document.getElementById("veterinaria-organizacion").value;
-  // var refugioOrg = document.getElementById("refugio-organizacion").value;
-  //var peluqueriaOrg = document.getElementById("peluqueria-organizacion").value;
+
   var direccionOrg = document.getElementById("b").value;
   var horariosOrg = document.getElementById("horarios-organizacion").value;
   var telefonoOrg = document.getElementById("telefono-organizacion").value;
@@ -62,9 +60,7 @@ formulario.addEventListener('click', function (event) {
   // convirtiendo a JSON
   const organizacionJSON = JSON.stringify(nuevaOrg);
 
-  console.log(organizacionJSON);
 
-  console.log(veterinariaOrg.value)
 
   if (nombreORg == "" || descripcionOrg == "" || descripcionOrg == "" || horariosOrg == "" || telefonoOrg == ""
     || imgOrg == "") {

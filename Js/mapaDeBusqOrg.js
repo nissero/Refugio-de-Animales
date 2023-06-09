@@ -26,8 +26,6 @@ function checkRefugio() {
     var filtroRefugio = document.querySelector("input[name=refugio]");
     filtroRefugio.addEventListener('change', function () {
         if (this.checked) {
-            // filtroPerdidoIsChecked = true;
-            console.log("check refugio");
             filtrorefugioIsChecked = true;
             return filtrorefugioIsChecked;
         }
@@ -42,7 +40,6 @@ function checkVet() {
     var filtroVet = document.querySelector("input[name=Veterinaria]");
     filtroVet.addEventListener('change', function () {
         if (this.checked) {
-            console.log("check Veterinaria");
             filtroVeterinariaIsChecked = true;
             return filtroVeterinariaIsChecked;
         }
@@ -57,8 +54,7 @@ function checkpeluqueria() {
   var filtroPeluqueria = document.querySelector("input[name=peluqueria]");
   filtroPeluqueria.addEventListener('change', function () {
       if (this.checked) {
-          // filtroPerdidoIsChecked = true;
-          console.log("check peluqueria");
+
           filtropeluqueriaIsChecked = true;
           return filtropeluqueriaIsChecked;
       }
@@ -79,14 +75,12 @@ function mostrarOrganizacionFiltrada() {
         metodosMapa.añadirMarkers(markersFiltrados, map);
     }
     else{
-        console.log("entro remover")
         metodosMapa.removerMarkers(map);
     }
     
 }
 
 function mostrarTodasLasOrg(){
-    console.log("mostrar todos los markers");
     metodosMapa.removerMarkers(map);
     metodosMapa.añadirMarkers(markers, map);
 }

@@ -22,7 +22,6 @@ function checkVet() {
     var filtroVet = document.querySelector("input[name=Veterinaria]");
     filtroVet.addEventListener('change', function () {
         if (this.checked) {
-            console.log("check Veterinaria");
             filtroVeterinariaIsChecked = true;
             return filtroVeterinariaIsChecked;
         }
@@ -38,8 +37,6 @@ function checkRefugio() {
     var filtroRefugio = document.querySelector("input[name=refugio]");
     filtroRefugio.addEventListener('change', function () {
         if (this.checked) {
-            // filtroPerdidoIsChecked = true;
-            console.log("check refugio");
             filtrorefugioIsChecked = true;
             return filtrorefugioIsChecked;
         }
@@ -55,8 +52,6 @@ function checkpeluqueria() {
   var filtroPeluqueria = document.querySelector("input[name=peluqueria]");
   filtroPeluqueria.addEventListener('change', function () {
       if (this.checked) {
-          // filtroPerdidoIsChecked = true;
-          console.log("check peluqueria");
           filtropeluqueriaIsChecked = true;
           return filtropeluqueriaIsChecked;
       }
@@ -72,6 +67,34 @@ let organizacionFiltrados =[];
 let organizaciones = [];
 
 
+const buscador = document.getElementById("buscador");
+const inputBusqueda = document.getElementById("inputBusqueda");
+
+buscador.addEventListener("click", function(){
+
+  contenerDeProcutos.innerHTML ="";
+  var org = [];
+  var valor = inputBusqueda.value;
+  valor = valor.toLowerCase();
+
+ organizaciones.forEach((organ)=>{
+
+  let nombre = organ.nombre
+  nombre = nombre.toLowerCase();
+
+  if(nombre.includes(valor))  {
+    org.push(organ)
+  }
+ })
+
+ añadirOrganizacionesAldoc(org)
+
+
+})
+
+
+
+
 
 function filtrarOrganizaciones() {
   checkVet();
@@ -79,9 +102,6 @@ function filtrarOrganizaciones() {
   checkpeluqueria();
 
   
-  // falta completar con los objetos organizacion
-
-  console.log("entro")
   
   
   // Ver todos
@@ -90,8 +110,7 @@ function filtrarOrganizaciones() {
     organizacionFiltrados = organizaciones.filter(Organizacion => 
       Organizacion.veterinaria || Organizacion.peluqueria || Organizacion.refugio)
       
-      console.log(organizacionFiltrados)
-      añadirOrganizacionesAldoc()
+      añadirOrganizacionesAldoc(organizacionFiltrados)
      
   }
   //VER vete si y pelu si
@@ -99,8 +118,7 @@ function filtrarOrganizaciones() {
     && !filtrorefugioIsChecked) {
       organizacionFiltrados = organizaciones.filter(Organizacion => 
         (Organizacion.veterinaria || Organizacion.peluqueria) );
-        console.log(organizacionFiltrados)
-        añadirOrganizacionesAldoc()
+        añadirOrganizacionesAldoc(organizacionFiltrados)
   }
   // VER vet si, pelu no , refu si
   else if (filtroVeterinariaIsChecked && !filtropeluqueriaIsChecked 
@@ -108,16 +126,14 @@ function filtrarOrganizaciones() {
 
       organizacionFiltrados = organizaciones.filter(Organizacion => 
         Organizacion.veterinaria || Organizacion.refugio);
-        console.log(organizacionFiltrados)
-        añadirOrganizacionesAldoc()
+        añadirOrganizacionesAldoc(organizacionFiltrados)
   }
 // VER pelu si, pelu NO, refu NO
   else if (filtroVeterinariaIsChecked && !filtropeluqueriaIsChecked 
     && !filtrorefugioIsChecked) {
       organizacionFiltrados = organizaciones.filter(Organizacion => 
         Organizacion.veterinaria);
-        console.log(organizacionFiltrados)
-        añadirOrganizacionesAldoc()
+        añadirOrganizacionesAldoc(organizacionFiltrados)
   }
   //VER Vete no, PELU SI, REFU SI
   else if (!filtroVeterinariaIsChecked && filtropeluqueriaIsChecked 
@@ -125,8 +141,7 @@ function filtrarOrganizaciones() {
 
       organizacionFiltrados = organizaciones.filter(Organizacion => 
         Organizacion.peluqueria || Organizacion.refugio);
-        console.log(organizacionFiltrados)
-        añadirOrganizacionesAldoc()
+        añadirOrganizacionesAldoc(organizacionFiltrados)
   }
   // VER vete NO, pelu SI, refu NO
     else if (!filtroVeterinariaIsChecked && filtropeluqueriaIsChecked 
@@ -134,8 +149,7 @@ function filtrarOrganizaciones() {
 
       organizacionFiltrados = organizaciones.filter(Organizacion => 
         Organizacion.peluqueria );
-        console.log(organizacionFiltrados)
-        añadirOrganizacionesAldoc()
+        añadirOrganizacionesAldoc(organizacionFiltrados)
   }
   //VETE NO, PELU NO, REFU SI
   else if (!filtroVeterinariaIsChecked && !filtropeluqueriaIsChecked 
@@ -143,19 +157,9 @@ function filtrarOrganizaciones() {
 
       organizacionFiltrados = organizaciones.filter(Organizacion => 
        Organizacion.refugio);
-        console.log(organizacionFiltrados)
-        añadirOrganizacionesAldoc()
+        añadirOrganizacionesAldoc(organizacionFiltrados)
   }
-// NO VER NADA
- /* else if (!filtroVeterinariaIsChecked && !filtropeluqueriaIsChecked 
-    && !filtrorefugioIsChecked){
-      organizacionFiltrados = organizaciones.filter(Organizacion => 
-        !Organizacion.veterinaria && !Organizacion.peluqueria && !Organizacion.refugio);
-        
-        console.log(organizacionFiltrados)
-        añadirOrganizacionesAldoc()
-  }
-*/
+
   else{
       console.log("no hizo nada")
   }
@@ -174,7 +178,6 @@ verTodasLasOrg.addEventListener('click', function(){
 })
 
 function mostrarOrganizacionFiltrada(){
-  console.log("hola")
   checkVet();
   checkRefugio();
   checkpeluqueria();
@@ -188,23 +191,14 @@ function mostrarOrganizacionFiltrada(){
 
 
 
-// function mostrarOrganizacionRegistrada(){
 
   var actualizarOrganizaciones = document.getElementById("actualizar-organizacion");
   botonActualizar.addEventListener('click',mostrarOrganizacionFiltrada)
-//   actualizarOrganizaciones.addEventListener('click', function(e){
 
-//     console.log(organizacionJSON);
-    
-//   })
-
-// }
-
-function añadirOrganizacionesAldoc(){
+function añadirOrganizacionesAldoc(orgFiltro){
   
 
-  organizacionFiltrados.forEach((organ)=>{
-    console.log(organizacionFiltrados)
+  orgFiltro.forEach((organ)=>{
     const div = document.createElement(`div`)
         const image = document.createElement("img")
         image.src = organ.img
@@ -239,7 +233,6 @@ function mostrarTodasLasOrg(){
   
 
   organizaciones.forEach((organ)=>{
-    console.log(organizacionFiltrados)
     const div = document.createElement(`div`)
         const image = document.createElement("img")
         image.src = organ.img
@@ -279,8 +272,6 @@ let listaOrg = []
 
 exportarJson().then(nuevoArrayOrgas => {
   organizaciones = nuevoArrayOrgas;
-  console.log(organizaciones);
-  console.log(organizacionFiltrados);
 
   
   
