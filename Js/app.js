@@ -186,9 +186,6 @@ function mostrarAvisos() {
 
     if (filtroAdopcionIsChecked) {
         console.log("entro al check 188")
-
-       
-        avisosFiltrados.concat(avisos.filter(Aviso => Aviso.tipoAviso == "adopcion"))
         if (filtroIsGatoIsChecked) {
             console.log("gato y adopcion")
             avisosFiltrados = avisosFiltrados.concat(avisos.filter(Aviso => Aviso.tipo == "gato"))
