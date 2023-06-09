@@ -122,9 +122,11 @@ function añadirDirecciones(response) {
 
 function cargarMarkers(direcciones){
   direcciones.forEach((org) => {
+    if(org.coordenadas !=null ){
     console.log(org.direccion.coordenadas);
-    var marker = new L.marker([org.coordenadas.x, org.coordenadas.y])
+    var marker = new L.marker([org.coordenadas.y, org.coordenadas.x])
     .bindPopup(org.direccion + ', '+ org.nombre_localidad).openPopup()
     markers.push(marker);
+    }
   })
 }
