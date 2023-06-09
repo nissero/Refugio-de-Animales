@@ -1,10 +1,13 @@
-
+import * as metodosMapa from './Js/metodosMapa.js';
 
 
 
 //hola tios como estan
 //buenas tardes
 
+var map;
+var markers = [];
+map = metodosMapa.crearMapa();
 let inpu = document.getElementById("Direccion"); //b es la direccion a buscar que viene del input
 inpu.addEventListener("keyup", normalizar); // cada vez que ingresa una letra
 let mensaje = document.getElementById("mensaje");
@@ -79,6 +82,11 @@ function añadirDirecciones(response) {
   else if (!tieneAltura){
     mensajes("Te falta ingresar una altura!")
   }
+  else if (tieneAltura){
+    cargarMarkers(direcciones);
+    metodosMapa.removerMarkers(map);
+    metodosMapa.añadirMarkers(markers, map)
+  }
   else if (direcciones.length > 1){
     mensajes("Encontre mas de una direccion, elije una")
   }
@@ -109,12 +117,14 @@ function añadirDirecciones(response) {
       lista.append(item);
     }
   });
-
-
-
-
 }
 
 
-
-
+function cargarMarkers(direcciones){
+  direcciones.forEach((org) => {
+    console.log(org.direccion.coordenadas);
+    var marker = new L.marker([org.coordenadas.x, org.coordenadas.y])
+    .bindPopup(org.direccion + ', '+ org.nombre_localidad).openPopup()
+    markers.push(marker);
+  })
+}
