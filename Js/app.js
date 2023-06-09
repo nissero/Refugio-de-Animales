@@ -38,6 +38,7 @@ let filtroIsGatoIsChecked = true;
 let filtroIsTortugaIsChecked = true;
 let filtroIsAveIsChecked = true;
 let avisos = [];
+let avisosFiltrados = [];
 
 
 function exportarJson() {
@@ -180,6 +181,54 @@ function mostrarAvisos() {
     checkTortuga();
     checkAve();
 
+    avisosFiltrados = [];
+
+
+    if (filtroAdopcionIsChecked) {
+        console.log("adopcion")
+
+       
+        avisosFiltrados.concat(avisos.filter(Aviso => Aviso.tipoAviso == "adopcion"))
+        if (filtroIsGatoIsChecked) {
+            console.log("gato y adopcion")
+
+           avisosFiltrados.concat(avisos.filter(Aviso => Aviso.tipo == "gato"))
+
+        }
+        if (filtroIsPerroIsChecked) {
+            avisosFiltrados.concat(avisos.filter(Aviso => Aviso.tipo == "perro"))
+        }
+    }
+    else {
+        console.log(avisosFiltrados)
+    }
+
+    añadirAvisosAdopcionAlDoc(avisosFiltrados);
+    console.log("SALIO")
+    console.log(avisosFiltrados)
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*
         var combinaciones = [
             checkAdopcion()
@@ -201,130 +250,132 @@ function mostrarAvisos() {
         }
         */
 
-    // 1 ver todos
-    if (filtroAdopcionIsChecked && filtroPerdidoIsChecked && filtroIsPerroIsChecked
-        && filtroIsGatoIsChecked && filtroIsTortugaIsChecked && filtroIsAveIsChecked) {
-        añadirAvisosAdopcionAlDoc(avisos);
-    }
-
-    // 2 todos menos tortuga
-    else if (filtroAdopcionIsChecked && filtroPerdidoIsChecked && filtroIsPerroIsChecked
-        && filtroIsGatoIsChecked && !filtroIsTortugaIsChecked && filtroIsAveIsChecked) {
-        añadirAvisosAdopcionAlDoc(avisos.filter(Aviso => Aviso.tipo != "tortuga"));
-    }
-    // 3 todos menos ave
-    else if (filtroAdopcionIsChecked && filtroPerdidoIsChecked && filtroIsPerroIsChecked
-        && filtroIsGatoIsChecked && filtroIsTortugaIsChecked && !filtroIsAveIsChecked) {
-        añadirAvisosAdopcionAlDoc(avisos.filter(Aviso => Aviso.tipo != "ave"));
-    }
-
-    // 4 todos menos ave y tortuga
-    else if (filtroAdopcionIsChecked && filtroPerdidoIsChecked && filtroIsPerroIsChecked
-        && filtroIsGatoIsChecked && !filtroIsTortugaIsChecked && !filtroIsAveIsChecked) {
-        añadirAvisosAdopcionAlDoc(avisos.filter(Aviso => Aviso.tipo != "ave" && Aviso.tipo != "tortuga"));
-    }
-    // 5 todo menos gato
-    else if (filtroAdopcionIsChecked && filtroPerdidoIsChecked && filtroIsPerroIsChecked
-        && !filtroIsGatoIsChecked && filtroIsTortugaIsChecked && filtroIsAveIsChecked) {
-        añadirAvisosAdopcionAlDoc(avisos.filter(Aviso => Aviso.tipo != "gato"));
-    }
-    //6  todo - gato y tortuga
-    else if (filtroAdopcionIsChecked && filtroPerdidoIsChecked && filtroIsPerroIsChecked
-        && !filtroIsGatoIsChecked && !filtroIsTortugaIsChecked && filtroIsAveIsChecked) {
-        añadirAvisosAdopcionAlDoc(avisos.filter(Aviso => Aviso.tipo != "gato" && Aviso.tipo != "tortuga"));
-    }
-    // 7 todo - gato y ave
-    else if (filtroAdopcionIsChecked && filtroPerdidoIsChecked && filtroIsPerroIsChecked
-        && !filtroIsGatoIsChecked && filtroIsTortugaIsChecked && !filtroIsAveIsChecked) {
-        añadirAvisosAdopcionAlDoc(avisos.filter(Aviso => Aviso.tipo != "gato" && Aviso.tipo != "ave"));
-    }
-    // 8 todo - gato y ave y tortuga
-    else if (filtroAdopcionIsChecked && filtroPerdidoIsChecked && filtroIsPerroIsChecked
-        && !filtroIsGatoIsChecked && !filtroIsTortugaIsChecked && !filtroIsAveIsChecked) {
-        añadirAvisosAdopcionAlDoc(avisos.filter(Aviso => Aviso.tipo != "gato" && Aviso.tipo != "ave"
-            && Aviso.tipo != "tortuga"));
-    }
-    // 9 todo - perro
-    else if (filtroAdopcionIsChecked && filtroPerdidoIsChecked && !filtroIsPerroIsChecked
-        && filtroIsGatoIsChecked && filtroIsTortugaIsChecked && filtroIsAveIsChecked) {
-        añadirAvisosAdopcionAlDoc(avisos.filter(Aviso => Aviso.tipo != "perro"));
-    }
-    // 10 todo - perro y tortuga
-    else if (filtroAdopcionIsChecked && filtroPerdidoIsChecked && !filtroIsPerroIsChecked
-        && filtroIsGatoIsChecked && !filtroIsTortugaIsChecked && filtroIsAveIsChecked) {
-        añadirAvisosAdopcionAlDoc(avisos.filter(Aviso => Aviso.tipo != "perro" && Aviso.tipo != "tortuga"));
-    }
-    // 11 todo - perro y ave
-    else if (filtroAdopcionIsChecked && filtroPerdidoIsChecked && !filtroIsPerroIsChecked
-        && filtroIsGatoIsChecked && filtroIsTortugaIsChecked && !filtroIsAveIsChecked) {
-        añadirAvisosAdopcionAlDoc(avisos.filter(Aviso => Aviso.tipo != "perro" && Aviso.tipo != "ave"));
-    }
-    // 12 todo - perro y ave y tortuga
-    else if (filtroAdopcionIsChecked && filtroPerdidoIsChecked && !filtroIsPerroIsChecked
-        && filtroIsGatoIsChecked && !filtroIsTortugaIsChecked && !filtroIsAveIsChecked) {
-        añadirAvisosAdopcionAlDoc(avisos.filter(Aviso => Aviso.tipo != "perro" && Aviso.tipo != "ave" && Aviso.tipo != "tortuga"));
-    }
-    // 13 todo - perro y gato
-    else if (filtroAdopcionIsChecked && filtroPerdidoIsChecked && !filtroIsPerroIsChecked
-        && !filtroIsGatoIsChecked && filtroIsTortugaIsChecked && filtroIsAveIsChecked) {
-        añadirAvisosAdopcionAlDoc(avisos.filter(Aviso => Aviso.tipo != "perro" && Aviso.tipo != "gato"));
-    }
-    // 14 todo - gato y perro y tortuga
-    else if (filtroAdopcionIsChecked && filtroPerdidoIsChecked && !filtroIsPerroIsChecked
-        && !filtroIsGatoIsChecked && !filtroIsTortugaIsChecked && filtroIsAveIsChecked) {
-        añadirAvisosAdopcionAlDoc(avisos.filter(Aviso => Aviso.tipo != "gato" && Aviso.tipo != "perro"
-            && Aviso.tipo != "tortuga"));
-    }
-    // 15 todo - gato y perro y ave
-    else if (filtroAdopcionIsChecked && filtroPerdidoIsChecked && !filtroIsPerroIsChecked
-        && !filtroIsGatoIsChecked && filtroIsTortugaIsChecked && !filtroIsAveIsChecked) {
-        añadirAvisosAdopcionAlDoc(avisos.filter(Aviso => Aviso.tipo != "gato" && Aviso.tipo != "perro"
-            && Aviso.tipo != "ave"));
-    }
-    // 16 todo - gato y perro y ave y tortuga
-    else if (filtroAdopcionIsChecked && filtroPerdidoIsChecked && !filtroIsPerroIsChecked
-        && !filtroIsGatoIsChecked && !filtroIsTortugaIsChecked && !filtroIsAveIsChecked) {
-        añadirAvisosAdopcionAlDoc(avisos.filter(Aviso => Aviso.tipo != "gato" && Aviso.tipo != "perro"
-            && Aviso.tipo != "ave" && Aviso.tipo != "tortuga"));
-        console.log("asd")
-    }
-    // 17 no Adopcion
-    else if (!filtroAdopcionIsChecked && filtroPerdidoIsChecked && filtroIsPerroIsChecked
-        && filtroIsGatoIsChecked && filtroIsTortugaIsChecked && filtroIsAveIsChecked) {
-        añadirAvisosAdopcionAlDoc(avisos.filter(Aviso => Aviso.tipoAviso != "Adopcion"));
-    }
-    // 18todos - Adopcion y tortuga
-    else if (!filtroAdopcionIsChecked && filtroPerdidoIsChecked && filtroIsPerroIsChecked
-        && filtroIsGatoIsChecked && !filtroIsTortugaIsChecked && filtroIsAveIsChecked) {
-        añadirAvisosAdopcionAlDoc(avisos.filter(Aviso => Aviso.tipoAviso != "Adopcion"
-            && Aviso.tipo != "tortuga"));
-    }
-    // 19todos - Adopcion y ave
-    else if (!filtroAdopcionIsChecked && filtroPerdidoIsChecked && filtroIsPerroIsChecked
-        && filtroIsGatoIsChecked && filtroIsTortugaIsChecked && !filtroIsAveIsChecked) {
-        añadirAvisosAdopcionAlDoc(avisos.filter(Aviso.tipoAviso != "Adopcion"
-            && Aviso.tipo != "ave"));
-    }
-
-    // 20 - no adopcion y ave y tortuga
-    else if (!filtroAdopcionIsChecked && filtroPerdidoIsChecked && filtroIsPerroIsChecked
-        && filtroIsGatoIsChecked && !filtroIsTortugaIsChecked && !filtroIsAveIsChecked) {
-        añadirAvisosAdopcionAlDoc(avisos.filter(Aviso.tipoAviso != "Adopcion"
-            && Aviso.tipo != "ave" && Aviso.tipo != "tortuga"));
-            console.log("caso 20")
-    }
 
 
+// 1 ver todos
+if (filtroAdopcionIsChecked && filtroPerdidoIsChecked && filtroIsPerroIsChecked
+&& filtroIsGatoIsChecked && filtroIsTortugaIsChecked && filtroIsAveIsChecked) {
+añadirAvisosAdopcionAlDoc(avisos);
+}
 
+// 2 todos menos tortuga
+else if (filtroAdopcionIsChecked && filtroPerdidoIsChecked && filtroIsPerroIsChecked
+&& filtroIsGatoIsChecked && !filtroIsTortugaIsChecked && filtroIsAveIsChecked) {
+añadirAvisosAdopcionAlDoc(avisos.filter(Aviso => Aviso.tipo != "tortuga"));
+}
+// 3 todos menos ave
+else if (filtroAdopcionIsChecked && filtroPerdidoIsChecked && filtroIsPerroIsChecked
+&& filtroIsGatoIsChecked && filtroIsTortugaIsChecked && !filtroIsAveIsChecked) {
+añadirAvisosAdopcionAlDoc(avisos.filter(Aviso => Aviso.tipo != "ave"));
+}
 
-    else {
-        console.log("cae en el else que falta que siga desarrollando los posibles casos")
-    }
+// 4 todos menos ave y tortuga
+else if (filtroAdopcionIsChecked && filtroPerdidoIsChecked && filtroIsPerroIsChecked
+&& filtroIsGatoIsChecked && !filtroIsTortugaIsChecked && !filtroIsAveIsChecked) {
+añadirAvisosAdopcionAlDoc(avisos.filter(Aviso => Aviso.tipo != "ave" && Aviso.tipo != "tortuga"));
+}
+// 5 todo menos gato
+else if (filtroAdopcionIsChecked && filtroPerdidoIsChecked && filtroIsPerroIsChecked
+&& !filtroIsGatoIsChecked && filtroIsTortugaIsChecked && filtroIsAveIsChecked) {
+añadirAvisosAdopcionAlDoc(avisos.filter(Aviso => Aviso.tipo != "gato"));
+}
+//6  todo - gato y tortuga
+else if (filtroAdopcionIsChecked && filtroPerdidoIsChecked && filtroIsPerroIsChecked
+&& !filtroIsGatoIsChecked && !filtroIsTortugaIsChecked && filtroIsAveIsChecked) {
+añadirAvisosAdopcionAlDoc(avisos.filter(Aviso => Aviso.tipo != "gato" && Aviso.tipo != "tortuga"));
+}
+// 7 todo - gato y ave
+else if (filtroAdopcionIsChecked && filtroPerdidoIsChecked && filtroIsPerroIsChecked
+&& !filtroIsGatoIsChecked && filtroIsTortugaIsChecked && !filtroIsAveIsChecked) {
+añadirAvisosAdopcionAlDoc(avisos.filter(Aviso => Aviso.tipo != "gato" && Aviso.tipo != "ave"));
+}
+// 8 todo - gato y ave y tortuga
+else if (filtroAdopcionIsChecked && filtroPerdidoIsChecked && filtroIsPerroIsChecked
+&& !filtroIsGatoIsChecked && !filtroIsTortugaIsChecked && !filtroIsAveIsChecked) {
+añadirAvisosAdopcionAlDoc(avisos.filter(Aviso => Aviso.tipo != "gato" && Aviso.tipo != "ave"
+    && Aviso.tipo != "tortuga"));
+}
+// 9 todo - perro
+else if (filtroAdopcionIsChecked && filtroPerdidoIsChecked && !filtroIsPerroIsChecked
+&& filtroIsGatoIsChecked && filtroIsTortugaIsChecked && filtroIsAveIsChecked) {
+añadirAvisosAdopcionAlDoc(avisos.filter(Aviso => Aviso.tipo != "perro"));
+}
+// 10 todo - perro y tortuga
+else if (filtroAdopcionIsChecked && filtroPerdidoIsChecked && !filtroIsPerroIsChecked
+&& filtroIsGatoIsChecked && !filtroIsTortugaIsChecked && filtroIsAveIsChecked) {
+añadirAvisosAdopcionAlDoc(avisos.filter(Aviso => Aviso.tipo != "perro" && Aviso.tipo != "tortuga"));
+}
+// 11 todo - perro y ave
+else if (filtroAdopcionIsChecked && filtroPerdidoIsChecked && !filtroIsPerroIsChecked
+&& filtroIsGatoIsChecked && filtroIsTortugaIsChecked && !filtroIsAveIsChecked) {
+añadirAvisosAdopcionAlDoc(avisos.filter(Aviso => Aviso.tipo != "perro" && Aviso.tipo != "ave"));
+}
+// 12 todo - perro y ave y tortuga
+else if (filtroAdopcionIsChecked && filtroPerdidoIsChecked && !filtroIsPerroIsChecked
+&& filtroIsGatoIsChecked && !filtroIsTortugaIsChecked && !filtroIsAveIsChecked) {
+añadirAvisosAdopcionAlDoc(avisos.filter(Aviso => Aviso.tipo != "perro" && Aviso.tipo != "ave" && Aviso.tipo != "tortuga"));
+}
+// 13 todo - perro y gato
+else if (filtroAdopcionIsChecked && filtroPerdidoIsChecked && !filtroIsPerroIsChecked
+&& !filtroIsGatoIsChecked && filtroIsTortugaIsChecked && filtroIsAveIsChecked) {
+añadirAvisosAdopcionAlDoc(avisos.filter(Aviso => Aviso.tipo != "perro" && Aviso.tipo != "gato"));
+}
+// 14 todo - gato y perro y tortuga
+else if (filtroAdopcionIsChecked && filtroPerdidoIsChecked && !filtroIsPerroIsChecked
+&& !filtroIsGatoIsChecked && !filtroIsTortugaIsChecked && filtroIsAveIsChecked) {
+añadirAvisosAdopcionAlDoc(avisos.filter(Aviso => Aviso.tipo != "gato" && Aviso.tipo != "perro"
+    && Aviso.tipo != "tortuga"));
+}
+// 15 todo - gato y perro y ave
+else if (filtroAdopcionIsChecked && filtroPerdidoIsChecked && !filtroIsPerroIsChecked
+&& !filtroIsGatoIsChecked && filtroIsTortugaIsChecked && !filtroIsAveIsChecked) {
+añadirAvisosAdopcionAlDoc(avisos.filter(Aviso => Aviso.tipo != "gato" && Aviso.tipo != "perro"
+    && Aviso.tipo != "ave"));
+}
+// 16 todo - gato y perro y ave y tortuga
+else if (filtroAdopcionIsChecked && filtroPerdidoIsChecked && !filtroIsPerroIsChecked
+&& !filtroIsGatoIsChecked && !filtroIsTortugaIsChecked && !filtroIsAveIsChecked) {
+añadirAvisosAdopcionAlDoc(avisos.filter(Aviso => Aviso.tipo != "gato" && Aviso.tipo != "perro"
+    && Aviso.tipo != "ave" && Aviso.tipo != "tortuga"));
+console.log("asd")
+}
+// 17 no Adopcion
+else if (!filtroAdopcionIsChecked && filtroPerdidoIsChecked && filtroIsPerroIsChecked
+&& filtroIsGatoIsChecked && filtroIsTortugaIsChecked && filtroIsAveIsChecked) {
+añadirAvisosAdopcionAlDoc(avisos.filter(Aviso => Aviso.tipoAviso != "Adopcion"));
+}
+// 18todos - Adopcion y tortuga
+else if (!filtroAdopcionIsChecked && filtroPerdidoIsChecked && filtroIsPerroIsChecked
+&& filtroIsGatoIsChecked && !filtroIsTortugaIsChecked && filtroIsAveIsChecked) {
+añadirAvisosAdopcionAlDoc(avisos.filter(Aviso => Aviso.tipoAviso != "Adopcion"
+    && Aviso.tipo != "tortuga"));
+}
+// 19todos - Adopcion y ave
+else if (!filtroAdopcionIsChecked && filtroPerdidoIsChecked && filtroIsPerroIsChecked
+&& filtroIsGatoIsChecked && filtroIsTortugaIsChecked && !filtroIsAveIsChecked) {
+añadirAvisosAdopcionAlDoc(avisos.filter(Aviso.tipoAviso != "Adopcion"
+    && Aviso.tipo != "ave"));
+}
+
+// 20 - no adopcion y ave y tortuga
+else if (!filtroAdopcionIsChecked && filtroPerdidoIsChecked && filtroIsPerroIsChecked
+&& filtroIsGatoIsChecked && !filtroIsTortugaIsChecked && !filtroIsAveIsChecked) {
+añadirAvisosAdopcionAlDoc(avisos.filter(Aviso.tipoAviso != "Adopcion"
+    && Aviso.tipo != "ave" && Aviso.tipo != "tortuga"));
+    console.log("caso 20")
 }
 
 
-function mostrarTodosAvisos(){
-   
+
+
+else {
+console.log("cae en el else que falta que siga desarrollando los posibles casos")
+}
+}
+
+
+function mostrarTodosAvisos() {
+
     añadirAvisosAdopcionAlDoc(avisos);
 
 }
