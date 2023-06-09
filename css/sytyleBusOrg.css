@@ -4,30 +4,23 @@ body {
     height: 100vh;
 }
 
-.web{
+#web{
 
-    display: grid;
-    grid-template-columns: 50% 50%;
-    grid-template-rows: 15% 10% 15% 55% 5%;
-    grid-template-areas:
+    display: flex;
 
-        "titulo titulo",
-        "menu menu",
-        "filtro filtro",
-        "contenido contenido",
-        "footer footer"
-    ;
 
 }
 
 
-.cuerpoOrg {
+#cuerpoOrg {
     display: flex;
     grid-area: "contenido";
     flex-direction: row;
 
     justify-content: space-around;
     flex-wrap: nowrap;
+  
+ 
 }
 
 .filtro {
@@ -37,6 +30,10 @@ body {
 
 }
 
+
+.destacado{
+    background-color: yellow;
+}
 
 header {
     grid-area: "titulo";
