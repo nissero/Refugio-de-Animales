@@ -16,6 +16,8 @@ var filtroVeterinariaIsChecked = true;
 var filtropeluqueriaIsChecked = true;
 var filtrorefugioIsChecked = true;
 
+
+
 function checkVet() {
     var filtroVet = document.querySelector("input[name=Veterinaria]");
     filtroVet.addEventListener('change', function () {
