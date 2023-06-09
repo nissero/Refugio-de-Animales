@@ -185,18 +185,17 @@ function mostrarAvisos() {
 
 
     if (filtroAdopcionIsChecked) {
-        console.log("adopcion")
+        console.log("entro al check 188")
 
        
         avisosFiltrados.concat(avisos.filter(Aviso => Aviso.tipoAviso == "adopcion"))
         if (filtroIsGatoIsChecked) {
             console.log("gato y adopcion")
-
-           avisosFiltrados.concat(avisos.filter(Aviso => Aviso.tipo == "gato"))
-
+            avisosFiltrados = avisosFiltrados.concat(avisos.filter(Aviso => Aviso.tipo == "gato"))
+            console.log(avisosFiltrados)
         }
         if (filtroIsPerroIsChecked) {
-            avisosFiltrados.concat(avisos.filter(Aviso => Aviso.tipo == "perro"))
+            avisosFiltrados = avisosFiltrados.concat(avisos.filter(Aviso => Aviso.tipo == "perro"))
         }
     }
     else {
@@ -217,7 +216,7 @@ function mostrarAvisos() {
 
 
 
-
+/*
 
 
 
@@ -251,7 +250,7 @@ function mostrarAvisos() {
         */
 
 
-
+/*
 // 1 ver todos
 if (filtroAdopcionIsChecked && filtroPerdidoIsChecked && filtroIsPerroIsChecked
 && filtroIsGatoIsChecked && filtroIsTortugaIsChecked && filtroIsAveIsChecked) {
@@ -367,12 +366,11 @@ añadirAvisosAdopcionAlDoc(avisos.filter(Aviso.tipoAviso != "Adopcion"
 
 
 
-
 else {
 console.log("cae en el else que falta que siga desarrollando los posibles casos")
 }
 }
-
+*/
 
 function mostrarTodosAvisos() {
 
