@@ -1,3 +1,5 @@
+import * as metodosMapa from './metodosMapa.js';
+
 var map;
 let markers = [];
 let markersFiltrados = [];
@@ -10,14 +12,14 @@ var filtroVeterinariaIsChecked = true;
 var filtropeluqueriaIsChecked = true;
 var filtrorefugioIsChecked = true;
 
-crearMapa();
+map = metodosMapa.crearMapa();
 exportarJson().then(arrayDeMarkers => {
     markers = arrayDeMarkers;
     checkVet();
     checkRefugio();
     checkpeluqueria();
     filtrado();
-    añadirMarkers(markersFiltrados);
+    metodosMapa.añadirMarkers(markersFiltrados, map);
 });
 
 function checkRefugio() {
@@ -36,6 +38,20 @@ function checkRefugio() {
     });
 }
 
+function checkVet() {
+    var filtroVet = document.querySelector("input[name=Veterinaria]");
+    filtroVet.addEventListener('change', function () {
+        if (this.checked) {
+            console.log("check Veterinaria");
+            filtroVeterinariaIsChecked = true;
+            return filtroVeterinariaIsChecked;
+        }
+        else {
+          filtroVeterinariaIsChecked = false;
+            return filtroVeterinariaIsChecked;
+        }
+    });
+}
 
 function checkpeluqueria() {
   var filtroPeluqueria = document.querySelector("input[name=peluqueria]");
@@ -54,21 +70,25 @@ function checkpeluqueria() {
 }
 
 function mostrarOrganizacionFiltrada() {
-    removerMarkers();
+    metodosMapa.removerMarkers(map);
     checkVet();
     checkRefugio();
     checkpeluqueria();
     filtrado();
     if (filtroVeterinariaIsChecked || filtropeluqueriaIsChecked || filtrorefugioIsChecked){
-        añadirMarkers(markersFiltrados);
+        metodosMapa.añadirMarkers(markersFiltrados, map);
+    }
+    else{
+        console.log("entro remover")
+        metodosMapa.removerMarkers(map);
     }
     
 }
 
 function mostrarTodasLasOrg(){
     console.log("mostrar todos los markers");
-    removerMarkers();
-    añadirMarkers(markers);
+    metodosMapa.removerMarkers(map);
+    metodosMapa.añadirMarkers(markers, map);
 }
 
 function filtrado() {
@@ -117,32 +137,6 @@ function filtrado() {
         markersFiltrados = markers.filter(marker =>
             marker.options.refugio);
     }
-}
-
-
-
-function crearMapa() {
-    map = L.map('map').setView([-34.52299128711134, -58.700488331227234], 10);
-    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        maxZoom: 19,
-        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-    }).addTo(map);
-}
-
-function removerMarkers(){
-    map.eachLayer(function(layer) {
-  if (layer instanceof L.Marker) {
-    map.removeLayer(layer);
-  }
-});
-}
-
-function añadirMarkers(arrDeMarkers) {
-    console.log("añadiendo markers");
-    console.log(markersFiltrados);
-    arrDeMarkers.forEach((marker)=>{
-        marker.addTo(map);
-    })
 }
 
 function exportarJson() {
