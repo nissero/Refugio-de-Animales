@@ -68,7 +68,6 @@ function checkAdopcion() {
     var filtroAdopcion = document.querySelector("input[name=adopcion]");
     filtroAdopcion.addEventListener('change', function () {
         if (this.checked) {
-            console.log("check adopcion");
             filtroAdopcionIsChecked = true;
             return filtroAdopcionIsChecked;
         }
@@ -83,8 +82,6 @@ function checkPerdido() {
     var filtroPerdido = document.querySelector("input[name=perdida]");
     filtroPerdido.addEventListener('change', function () {
         if (this.checked) {
-            // filtroPerdidoIsChecked = true;
-            console.log("check perdida");
             filtroPerdidoIsChecked = true;
             return filtroPerdidoIsChecked;
         }
@@ -101,8 +98,6 @@ function checkPerro() {
     var filtroPerro = document.querySelector("input[name=perro]");
     filtroPerro.addEventListener('change', function () {
         if (this.checked) {
-            // filtroPerdidoIsChecked = true;
-            console.log("check perro");
             filtroIsPerroIsChecked = true;
             return filtroIsPerroIsChecked;
         }
@@ -118,8 +113,7 @@ function checkGato() {
     var filtroGato = document.querySelector("input[name=gato]");
     filtroGato.addEventListener('change', function () {
         if (this.checked) {
-            // filtroPerdidoIsChecked = true;
-            console.log("check gato");
+
             filtroIsGatoIsChecked = true;
             return filtroIsGatoIsChecked;
         }
@@ -135,8 +129,6 @@ function checkTortuga() {
     var filtrotortuga = document.querySelector("input[name=tortuga]");
     filtrotortuga.addEventListener('change', function () {
         if (this.checked) {
-            // filtroPerdidoIsChecked = true;
-            console.log("check tortuga");
             filtroIsTortugaIsChecked = true;
             return filtroIsTortugaIsChecked;
         }
@@ -151,8 +143,6 @@ function checkAve() {
     var filtroAve = document.querySelector("input[name=ave]");
     filtroAve.addEventListener('change', function () {
         if (this.checked) {
-            // filtroPerdidoIsChecked = true;
-            console.log("check ave");
             filtroIsAveIsChecked = true;
             return filtroIsAveIsChecked;
         }
@@ -187,7 +177,6 @@ function mostrarAvisos() {
     if (filtroAdopcionIsChecked) {
         if (filtroIsGatoIsChecked) {
             avisosFiltrados = avisosFiltrados.concat(avisos.filter(Aviso => Aviso.tipo == "gato" && Aviso.tipoAviso == "Adopcion"))
-            console.log(avisosFiltrados)
         }
         if (filtroIsPerroIsChecked) {
             avisosFiltrados = avisosFiltrados.concat(avisos.filter(Aviso => Aviso.tipo == "perro" && Aviso.tipoAviso == "Adopcion"))
@@ -203,7 +192,6 @@ function mostrarAvisos() {
     if (filtroPerdidoIsChecked) {
         if (filtroIsGatoIsChecked) {
             avisosFiltrados = avisosFiltrados.concat(avisos.filter(Aviso => Aviso.tipo == "gato" && Aviso.tipoAviso == "perdidoEncontrado"))
-            console.log(avisosFiltrados)
         }
         if (filtroIsPerroIsChecked) {
             avisosFiltrados = avisosFiltrados.concat(avisos.filter(Aviso => Aviso.tipo == "perro" && Aviso.tipoAviso == "perdidoEncontrado"))

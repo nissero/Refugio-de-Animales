@@ -22,7 +22,6 @@ function checkVet() {
     var filtroVet = document.querySelector("input[name=Veterinaria]");
     filtroVet.addEventListener('change', function () {
         if (this.checked) {
-            console.log("check Veterinaria");
             filtroVeterinariaIsChecked = true;
             return filtroVeterinariaIsChecked;
         }
@@ -38,8 +37,6 @@ function checkRefugio() {
     var filtroRefugio = document.querySelector("input[name=refugio]");
     filtroRefugio.addEventListener('change', function () {
         if (this.checked) {
-            // filtroPerdidoIsChecked = true;
-            console.log("check refugio");
             filtrorefugioIsChecked = true;
             return filtrorefugioIsChecked;
         }
@@ -55,8 +52,6 @@ function checkpeluqueria() {
   var filtroPeluqueria = document.querySelector("input[name=peluqueria]");
   filtroPeluqueria.addEventListener('change', function () {
       if (this.checked) {
-          // filtroPerdidoIsChecked = true;
-          console.log("check peluqueria");
           filtropeluqueriaIsChecked = true;
           return filtropeluqueriaIsChecked;
       }
@@ -86,7 +81,6 @@ buscador.addEventListener("click", function(){
 
   let nombre = organ.nombre
   nombre = nombre.toLowerCase();
-  //console.log(nombre)
 
   if(nombre.includes(valor))  {
     org.push(organ)
@@ -108,7 +102,6 @@ function filtrarOrganizaciones() {
   checkpeluqueria();
 
   
-  console.log("entro")
   
   
   // Ver todos
@@ -117,7 +110,6 @@ function filtrarOrganizaciones() {
     organizacionFiltrados = organizaciones.filter(Organizacion => 
       Organizacion.veterinaria || Organizacion.peluqueria || Organizacion.refugio)
       
-      console.log(organizacionFiltrados)
       añadirOrganizacionesAldoc(organizacionFiltrados)
      
   }
@@ -126,7 +118,6 @@ function filtrarOrganizaciones() {
     && !filtrorefugioIsChecked) {
       organizacionFiltrados = organizaciones.filter(Organizacion => 
         (Organizacion.veterinaria || Organizacion.peluqueria) );
-        console.log(organizacionFiltrados)
         añadirOrganizacionesAldoc(organizacionFiltrados)
   }
   // VER vet si, pelu no , refu si
@@ -135,7 +126,6 @@ function filtrarOrganizaciones() {
 
       organizacionFiltrados = organizaciones.filter(Organizacion => 
         Organizacion.veterinaria || Organizacion.refugio);
-        console.log(organizacionFiltrados)
         añadirOrganizacionesAldoc(organizacionFiltrados)
   }
 // VER pelu si, pelu NO, refu NO
@@ -143,7 +133,6 @@ function filtrarOrganizaciones() {
     && !filtrorefugioIsChecked) {
       organizacionFiltrados = organizaciones.filter(Organizacion => 
         Organizacion.veterinaria);
-        console.log(organizacionFiltrados)
         añadirOrganizacionesAldoc(organizacionFiltrados)
   }
   //VER Vete no, PELU SI, REFU SI
@@ -152,7 +141,6 @@ function filtrarOrganizaciones() {
 
       organizacionFiltrados = organizaciones.filter(Organizacion => 
         Organizacion.peluqueria || Organizacion.refugio);
-        console.log(organizacionFiltrados)
         añadirOrganizacionesAldoc(organizacionFiltrados)
   }
   // VER vete NO, pelu SI, refu NO
@@ -161,7 +149,6 @@ function filtrarOrganizaciones() {
 
       organizacionFiltrados = organizaciones.filter(Organizacion => 
         Organizacion.peluqueria );
-        console.log(organizacionFiltrados)
         añadirOrganizacionesAldoc(organizacionFiltrados)
   }
   //VETE NO, PELU NO, REFU SI
@@ -170,7 +157,6 @@ function filtrarOrganizaciones() {
 
       organizacionFiltrados = organizaciones.filter(Organizacion => 
        Organizacion.refugio);
-        console.log(organizacionFiltrados)
         añadirOrganizacionesAldoc(organizacionFiltrados)
   }
 
@@ -192,7 +178,6 @@ verTodasLasOrg.addEventListener('click', function(){
 })
 
 function mostrarOrganizacionFiltrada(){
-  console.log("hola")
   checkVet();
   checkRefugio();
   checkpeluqueria();
@@ -206,23 +191,14 @@ function mostrarOrganizacionFiltrada(){
 
 
 
-// function mostrarOrganizacionRegistrada(){
 
   var actualizarOrganizaciones = document.getElementById("actualizar-organizacion");
   botonActualizar.addEventListener('click',mostrarOrganizacionFiltrada)
-//   actualizarOrganizaciones.addEventListener('click', function(e){
-
-//     console.log(organizacionJSON);
-    
-//   })
-
-// }
 
 function añadirOrganizacionesAldoc(orgFiltro){
   
 
   orgFiltro.forEach((organ)=>{
-    console.log(orgFiltro)
     const div = document.createElement(`div`)
         const image = document.createElement("img")
         image.src = organ.img
@@ -257,7 +233,6 @@ function mostrarTodasLasOrg(){
   
 
   organizaciones.forEach((organ)=>{
-    console.log(organizacionFiltrados)
     const div = document.createElement(`div`)
         const image = document.createElement("img")
         image.src = organ.img
@@ -297,8 +272,6 @@ let listaOrg = []
 
 exportarJson().then(nuevoArrayOrgas => {
   organizaciones = nuevoArrayOrgas;
-  console.log(organizaciones);
-  console.log(organizacionFiltrados);
 
   
   
