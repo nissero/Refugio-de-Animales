@@ -1,6 +1,7 @@
 
 
 
+
 //hola tios como estan
 //buenas tardes
 function main() {
@@ -42,8 +43,9 @@ function getFromURL(url, callback) {
   xhttp.onreadystatechange = function () {
 
     if (xhttp.readyState == 4 && xhttp.status == 200) {
+      
       let response = JSON.parse(xhttp.responseText);
-      console.log(response);
+      
       callback(response);
     }
   }
@@ -62,15 +64,18 @@ function getFromURL(url, callback) {
 
 
 function listarUsuarios(response) {
-  let lista = document.getElementById("lista-usuarios");
-  var direcciones = response.direccionesNormalizadas;
   
+  let lista = document.getElementById("lista-usuarios");
+  console.log(response);
+  var direcciones = response.direccionesNormalizadas.filter(direccion => 
+    direccion.altura!=null && (direccion.tipo=="calle" || direccion.tipo=="calle_altura"));
+    console.log(direcciones);
 
   direcciones.forEach(usuario => {
     let item = document.createElement("li");
     let button = document.createElement("button");
     button.classList.add("boton");
-
+    
     button.innerText = usuario.direccion;
 
     button.addEventListener("click", function() {
@@ -94,5 +99,7 @@ function listarUsuarios(response) {
   
 
 }
+
+
 
 
