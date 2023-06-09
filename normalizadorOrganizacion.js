@@ -4,27 +4,26 @@
 
 //hola tios como estan
 //buenas tardes
-function main() {
-  
 
-  let inpu = document.getElementById("b"); //b es la direccion a buscar que viene del input
+let inpu = document.getElementById("Direccion"); //b es la direccion a buscar que viene del input
+inpu.addEventListener("keyup", normalizar); // cada vez que ingresa una letra
+let mensaje = document.getElementById("mensaje");
+mensajes("Escribe una direccion");
 
-  
- 
 
-  inpu.addEventListener("keyup", (event) => { // cada vez que ingresa una letra
-    var di = "http://servicios.usig.buenosaires.gob.ar/normalizar/?direccion=" + document.getElementById("b").value;
-    getFromURL(di, listarUsuarios);
-    actualizarDirecciones();
-  });
-
+function normalizar() {
+  var di = "http://servicios.usig.buenosaires.gob.ar/normalizar/?direccion=" + document.getElementById("Direccion").value;
+  getFromURL(di, añadirDirecciones);
+  actualizarDirecciones();
+  mensajes("");
 }
 
+function mensajes(Texto) {
+  mensaje.innerHTML = "<p>" + Texto + "<p>";
+}
 
-
- 
 function actualizarDirecciones() { //actualiza dirreciones mientras escribe
-  var lista = document.getElementById("lista-usuarios");
+  var lista = document.getElementById("lista-direcciones");
   var elementos = lista.getElementsByTagName("li");
 
   // Recorre los elementos en sentido inverso para evitar problemas con los índices
@@ -43,9 +42,9 @@ function getFromURL(url, callback) {
   xhttp.onreadystatechange = function () {
 
     if (xhttp.readyState == 4 && xhttp.status == 200) {
-      
+
       let response = JSON.parse(xhttp.responseText);
-      
+
       callback(response);
     }
   }
@@ -63,40 +62,56 @@ function getFromURL(url, callback) {
 }
 
 
-function listarUsuarios(response) {
-  
-  let lista = document.getElementById("lista-usuarios");
+function añadirDirecciones(response) {
+
+  let lista = document.getElementById("lista-direcciones");
   console.log(response);
-  var direcciones = response.direccionesNormalizadas.filter(direccion => 
-    direccion.altura!=null && (direccion.tipo=="calle" || direccion.tipo=="calle_altura"));
-    console.log(direcciones);
+  var direcciones = response.direccionesNormalizadas
+  var tieneAltura = false;
+  direcciones.forEach(direccion =>{
+    if (direccion.altura != null){
+      tieneAltura = true;
+    }
+  });
+  if (direcciones.length == 0){
+    mensajes("Error: Direción incorrecta!")
+  }
+  else if (!tieneAltura){
+    mensajes("Te falta ingresar una altura!")
+  }
+  else if (direcciones.length > 1){
+    mensajes("Encontre mas de una direccion, elije una")
+  }
+  else{
+    mensajes("Bien!")
+  }
 
   direcciones.forEach(usuario => {
     let item = document.createElement("li");
     let button = document.createElement("button");
     button.classList.add("boton");
-    
+
     button.innerText = usuario.direccion;
 
-    button.addEventListener("click", function() {
+    button.addEventListener("click", function () {
       // Acciones a realizar cuando se hace clic en el botón
-      
-      let input =document.getElementById("b");
-      input.value=button.innerText;
-      
+
+      let input = document.getElementById("Direccion");
+      input.value = button.innerText;
+
       // Aquí puedes agregar la lógica adicional que deseas ejecutar al hacer clic en el botón dentro de la lista.
     });
-    
+
 
     item.append(button);
-    
-    if (!lista.contains(item)){
+
+    if (!lista.contains(item)) {
       lista.append(item);
     }
-    });
-  
- 
-  
+  });
+
+
+
 
 }
 
