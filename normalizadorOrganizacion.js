@@ -84,9 +84,8 @@ function añadirDirecciones(response) {
   }
   else if (tieneAltura){
     cargarMarkers(direcciones);
-    console.log(markers);
     metodosMapa.removerMarkers(map);
-    metodosMapa.añadirMarkers(markers, map);
+    metodosMapa.añadirMarkers(markers, map)
   }
   else if (direcciones.length > 1){
     mensajes("Encontre mas de una direccion, elije una")
@@ -123,13 +122,9 @@ function añadirDirecciones(response) {
 
 function cargarMarkers(direcciones){
   direcciones.forEach((org) => {
-    console.log(org)
-    if (org.coordenadas){
-      console.log(org.coordenadas);
-      var marker = new L.marker([org.coordenadas.x, org.coordenadas.y])
-      .bindPopup(org.direccion + ', '+ org.nombre_localidad).openPopup()
-      markers.push(marker);
-    }
+    console.log(org.direccion.coordenadas);
+    var marker = new L.marker([org.coordenadas.x, org.coordenadas.y])
+    .bindPopup(org.direccion + ', '+ org.nombre_localidad).openPopup()
+    markers.push(marker);
   })
-  console.log(markers);
 }
