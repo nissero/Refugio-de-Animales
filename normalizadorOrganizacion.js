@@ -123,12 +123,11 @@ function añadirDirecciones(response) {
 
 function cargarMarkers(direcciones){
   direcciones.forEach((org) => {
-    console.log(org)
-    if (org.coordenadas){
-      console.log(org.coordenadas);
-      var marker = new L.marker([org.coordenadas.x, org.coordenadas.y])
-      .bindPopup(org.direccion + ', '+ org.nombre_localidad).openPopup()
-      markers.push(marker);
+    if(org.coordenadas !=null ){
+    console.log(org.direccion.coordenadas);
+    var marker = new L.marker([org.coordenadas.y, org.coordenadas.x])
+    .bindPopup(org.direccion + ', '+ org.nombre_localidad).openPopup()
+    markers.push(marker);
     }
   })
   console.log(markers);

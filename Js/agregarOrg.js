@@ -46,7 +46,7 @@ formulario.addEventListener('click', function (event) {
   var nombreORg = document.getElementById("nombre-organizacion").value;
   var descripcionOrg = document.getElementById("descripcion-organizacion").value;
 
-  var direccionOrg = document.getElementById("b").value;
+  var direccionOrg = document.getElementById("Direccion").value;
   var horariosOrg = document.getElementById("horarios-organizacion").value;
   var telefonoOrg = document.getElementById("telefono-organizacion").value;
   var imgOrg = document.getElementById("img-organizacion").value;
@@ -70,7 +70,11 @@ formulario.addEventListener('click', function (event) {
       text: `El formulario esta incompleto`
     })
   } else {
-    Swal.fire(`PERFECTO! Solicitud de registro agregada correctamente,
+    Swal.fire({
+      
+    Image: './Images/fondo.jpg',
+      
+    text: `PERFECTO! Solicitud de registro agregada correctamente,
     Sus datos: 
     nombre: ${nombreORg}
     descripcion: ${descripcionOrg}
@@ -81,7 +85,7 @@ formulario.addEventListener('click', function (event) {
     horarios: ${horariosOrg}
     telefono: ${telefonoOrg}
     Img: link de IMG guardado.
-    `);
+    `});
 
 
   }
