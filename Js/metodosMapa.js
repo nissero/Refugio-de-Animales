@@ -17,6 +17,7 @@ export function removerMarkers(mapa){
 }
 
 export function añadirMarkers(arrDeMarkers, mapa) {
+    console.log(arrDeMarkers)
     arrDeMarkers.forEach((marker)=>{
         marker.addTo(mapa);
     })
