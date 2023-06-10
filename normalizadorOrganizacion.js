@@ -85,10 +85,10 @@ function añadirDirecciones(response) {
 
       inpu = document.getElementById("Direccion");
       inpu.value = button.innerText;
-
+      normalizar();
       // Aquí puedes agregar la lógica adicional que deseas ejecutar al hacer clic en el botón dentro de la lista.
     });
-    
+
     item.append(button);
     if (!lista.contains(item)) {
       lista.append(item);
