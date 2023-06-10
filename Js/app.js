@@ -207,7 +207,7 @@ function mostrarAvisos() {
 
 
     }
-    añadirAvisosAdopcionAlDoc(avisosFiltrados);
+    añadirAvisosAlDoc(avisosFiltrados);
 
 
 }
@@ -217,7 +217,7 @@ function mostrarAvisos() {
 
 function mostrarTodosAvisos() {
 
-    añadirAvisosAdopcionAlDoc(avisos);
+    añadirAvisosAlDoc(avisos);
 
 }
 
@@ -235,7 +235,7 @@ botonActualizar.addEventListener("click", mostrarAvisos);
 
 
 
-function añadirAvisosAdopcionAlDoc(avisosAMostrar) {
+function añadirAvisosAlDoc(avisosAMostrar) {
     avisosAMostrar.forEach((aviso) => {
         const div = document.createElement(`div`)
         div.classList.add('aviso');
