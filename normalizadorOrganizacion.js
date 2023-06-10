@@ -66,7 +66,7 @@ function getFromURL(url, callback) {
 
 
 function añadirDirecciones(response) {
-
+  metodosMapa.removerMarkers(map);
   let lista = document.getElementById("lista-direcciones");
   console.log(response);
   var direcciones = response.direccionesNormalizadas
