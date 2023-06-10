@@ -161,11 +161,26 @@ function exportarJson() {
                         mensajePopup = mensajePopup + " Es un refugio <br>"
                         refugio = true;
                     }
-                    var mark = new L.marker([org.direccion[0].coordenadas.x, org.direccion[0].coordenadas.y], { veterinaria, refugio, peluqueria})
+                    if (org.destacado){
+                        var redIcon = new L.Icon({
+                            iconUrl: 'https://i0.wp.com/eltallerdehector.com/wp-content/uploads/2022/07/estrella-mario-bros-png-transparente.png?fit=800%2C800&ssl=1', // URL de la imagen del marcador
+                            iconSize: [25, 41], // Tamaño del icono
+                            iconAnchor: [12, 41], // Punto de anclaje del icono
+                            popupAnchor: [0, -41] // Punto de anclaje del popup asociado al icono
+                          });
+                        var mark = new L.marker([org.direccion[0].coordenadas.x, org.direccion[0].coordenadas.y], { veterinaria, refugio, peluqueria, icon: redIcon})
+                          .bindPopup('<br> DESTACADA <br>'+'<img src="' + img + '" alt="Imagen" width='+ width + '"height="' + height + '">"' + '<br>' + "Nombre: " + org.nombre +
+                          "<br>Descripción: "+ org.descripcion + "<br>Direccion: " + org.direccion[0].direccion + ', '
+                              + org.direccion[0].nombre_localidad + '<br>Actividades:<br>  ' + mensajePopup).openPopup()
+                      ret.push(mark);
+                    }
+                    else{
+                        var mark = new L.marker([org.direccion[0].coordenadas.x, org.direccion[0].coordenadas.y], { veterinaria, refugio, peluqueria})
                         .bindPopup('<img src="' + img + '" alt="Imagen" width='+ width + '"height="' + height + '">"' + '<br>' + "Nombre: " + org.nombre +
                         "<br>Descripción: "+ org.descripcion + "<br>Direccion: " + org.direccion[0].direccion + ', '
                             + org.direccion[0].nombre_localidad + '<br>Actividades:<br>  ' + mensajePopup).openPopup()
                     ret.push(mark);
+                    }
                 });
                 resolve(ret);
             })
